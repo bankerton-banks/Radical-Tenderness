@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: YoungSerif ;
+    src: url(fonts/YoungSerif-Regular.otf);
+}
+
+@font-face {
+    font-family: Insitu;
+    src: url(fonts/for-insituunlicensedtrial-light.otf);
+}
+
+.text1{
+    font-family: YoungSerif;
+    font-size: 200pt;
+    font-weight: regular;
+    color: #FF9AE9;
+    top: 80px;
+    left: 100px;
+    position: absolute;
+    line-height: 100pt;
+    letter-spacing: -2px;
+    pointer-events: none;
+}
+
+.text2{
+    font-size: 40;
+    font-family: Insitu;
+    font-weight: light;
+    color: #FF9AE9;
+    position: absolute;
+    top: 380px;
+    left: 100px;
+    pointer-events: none;
+}
+
+.image1{
+    width: 500px;
+    position: absolute;
+    top: 40px;
+    left: 1000px;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.image2{
+    width: 1000px;
+    position: absolute;
+    top: 70px;
+    left: 500px;
+    pointer-events: none;
+    display: none;
+}
