@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: YoungSerif;
+    src: url(fonts/YoungSerif-Regular.otf);
+}
+
+@font-face {
+    font-family: insitu;
+    src: url(fonts/for-insituunlicensedtrial-light.otf);
+}
+.parent1{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.child1{
+    font-family: YoungSerif;
+    font-size: 8em;
+    color: #FF9AE9;
+    margin-left: 50px;
+    margin-top: 30px;
+    flex-direction: column;
+}
+
+.child2{
+    font-family: insitu;
+    font-size: 1.5em;
+    color: #FF9AE9;
+    align-self: flex-start;
+    margin-left: 50px;
+    margin-top: -30px;
+}
+
+.child3{
+    font-family: insitu;
+    font-size: 1em;
+    color: #FF9AE9;
+    align-self: flex-start;
+    margin-left: 50px;
+}
+
+.parent2{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    rotate: 45deg;
+    margin-left: 700px;
+    margin-top: -150px;
+    white-space: nowrap;
+}
+
+.child4{
+    font-family: insitu;
+    font-size: 1.5em;
+    color: #FF9AE9;
+    align-self: flex-start;
+    margin-left: 50px;
+    margin-top: -30px;
+}
+
+.parent3{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    rotate: 90deg;
+    margin-left: 1250px;
+    white-space: nowrap;
+    margin-top: -200px;
+}
