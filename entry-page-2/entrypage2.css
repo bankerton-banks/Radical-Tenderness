@@ -22,7 +22,7 @@
     font-size: 150px;
     font-weight: regular;
     color: #FF9AE9;
-    top: 600px;
+    top: 800px;
     left: 120px;
     position: absolute;
     line-height: 100pt;
@@ -60,7 +60,7 @@
         transform: translateX(-50%);
     }
     to {
-        bottom: -100px;
+        bottom: 00px;
         transform: translateX(-50%);
     }
 }

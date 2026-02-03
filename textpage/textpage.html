@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="textpage.css">
+    </head>
+    <body>
+    <h1> Radical Tenderness is </h1>
+    <h4> section 1</h4>
+    <button id="nextBtn">Next</button>
+    <button id="deleteBtn">Delete</button>
+    <div class="textblock1 hidden">
+        <p>
+        <span>It is </span>
+        practicing <br>
+        attunement<br>
+        It is listening<br>
+        to collective<br>
+        unuttered<br>
+        wisdom,<br>
+        nurturing<br>
+        intrinsic,<br>
+        rather than<br>
+        productive<br>
+        value<br>
+        </p>
+    </div>
+
+    <div class="textblock2 hidden">
+        <p>
+        <span>It is </span>
+        engaging<br>
+        with each<br>
+        other beyond<br>
+        desires for<br>
+        consensus,<br>
+        coherence<br>
+        and control<br>
+        </p>
+    </div>
+
+     <div class="textblock3 hidden">
+        <p>
+        <span>It is </span>
+        It is dancing<br>
+        beyond<br>
+        the loop of<br>
+        identification<br>
+        and dis-iden-<br>
+        tification<br>
+        </p>
+    </div>
+
+       <div class="textblock4 hidden">
+        <p>
+        <span>It is </span>
+        letting go of <br>
+        possessions,<br>
+        of possessiveness<br>
+        </p>
+    </div>
+
+        <div class="textblock5 hidden">
+        <p>
+        <span>It is </span>
+        feeling <br>
+        part of<br>
+        a wider<br>
+        metabolism<br>
+        with a much<br>
+        longer<br>
+        temporality<br>
+        </p>
+    </div>
+    <div class="textblock6 hidden">
+            <p>
+            <span>It is </span>
+          queering <br>
+           time <br>
+            </p>
+        </div>
+
+     <div class="textblock7 hidden">
+        <p>
+        <span>It is </span>
+        setting what<br>
+        matters<br>
+        in the time<br>
+        when we<br>
+        no longer<br>
+        inhabit this<br>
+        body<br>
+        </p>
+    </div>
+
+
+     <div class="textblock8 hidden">
+        <p>
+        <span>It is </span>
+        to be <br>
+        sense-full,<br>
+        to allow our<br>
+        state of<br>
+        wondering<br>
+        to stay open,<br>
+        without<br>
+        always<br>
+        trapping it<br>
+        into meaning<br>
+    </div>
+
+     <div class="textblock9 hidden">
+        <p>
+        <span>It is </span>
+        not<br>
+        holding<br>
+       “being”<br>
+        hostage to<br>
+       “knowing”<br>
+        </p>
+    </div>
+
+     <div class="textblock10 hidden">
+        <p>
+        <span>It is </span>
+        presencing <br>
+        what we don’t<br>
+        know, what<br>
+        we can’t know,<br>
+        and what is<br>
+        unknowable<br>
+        (in ourselves<br>
+        and in others)<br>
+        </p>
+    </div>
+
+        <div class="textblock11 hidden">
+        <p>
+        <span>It is </span>
+        quieting the<br>
+        narrativization<br>
+        of the world<br>
+        and enjoying<br>
+        silence with<br>
+        each other<br>
+        </p>
+    </div>
+
+    <a href="../section2/section2.html"><button class="nextpagebutton hidden">section 2</button></a>
+
+        
+<script>
+    let clickCount = 0;
+    const nextBtn = document.getElementById('nextBtn');
+    const deleteBtn = document.getElementById('deleteBtn');
+    const textblock1 = document.querySelector('.textblock1');
+    const textblock2 = document.querySelector('.textblock2');
+    const textblock3 = document.querySelector('.textblock3');
+    const textblock4 = document.querySelector('.textblock4');
+    const textblock5 = document.querySelector('.textblock5');
+    const textblock6 = document.querySelector('.textblock6');
+    const textblock7 = document.querySelector('.textblock7');
+    const textblock8 = document.querySelector('.textblock8');
+    const textblock9 = document.querySelector('.textblock9');
+    const textblock10 = document.querySelector('.textblock10');
+    const textblock11 = document.querySelector('.textblock11');
+    const nextPageButton = document.querySelector('.nextpagebutton');
+
+    const textblocks = [null, textblock1, textblock2, textblock3, textblock4, textblock5, 
+                        textblock6, textblock7, textblock8, textblock9, textblock10, textblock11, nextPageButton];
+
+    nextBtn.addEventListener('click', () => {
+        if (clickCount < 12) {
+            clickCount++;
+            textblocks[clickCount].classList.add('show');
+            
+            // Auto-scroll when textblock6 appears
+            if (clickCount === 6) {
+                window.scrollTo({
+                    top: 400,
+                    behavior: 'smooth'
+                });
+            }
+            // Auto-scroll when textblock10 appears
+            if (clickCount === 10) {
+                window.scrollTo({
+                    top: 1000,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    });
+
+    deleteBtn.addEventListener('click', () => {
+        if (clickCount > 0) {
+            textblocks[clickCount].classList.remove('show');
+            clickCount--;
+        }
+    });
+</script>
+    <script src="script.js"></script>
+</body>
+</html>

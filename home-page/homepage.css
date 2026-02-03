@@ -28,6 +28,10 @@
     flex-direction: column;
 }
 
+a{
+    text-decoration: none;
+}
+
 .child2{
     font-family: insitu;
     font-size: 1.5em;
