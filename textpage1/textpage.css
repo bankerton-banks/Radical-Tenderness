@@ -1,0 +1,308 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face{
+    font-family: Klaus ;
+    src: url(../fonts/MNKYKlausTRIAL-Regular.otf);
+}
+
+@font-face{
+    font-family: Klausthin ;
+    src: url(../fonts/MNKYKlausTRIAL-Thin.otf);
+}
+
+h1{
+    font-family: Klaus ;
+    font-size: 8em;
+    font-weight: 100;
+    color: #FF9AE9;
+    margin-left: 50px;
+    margin-top: -40px;
+    letter-spacing: -0.08em;
+    line-height: 100pt;
+}
+
+h4{
+    font-family: Klaus;
+    font-size: 1em;
+    font-weight: 100;
+    color:  #FF9AE9;
+    margin-top: -20px;
+    margin-left: 60px;
+    line-height: 35pt;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: #2900F5;
+}
+
+html {
+    height: 100%;
+}
+
+p{
+    font-family: klausthin;
+    font-size: 1.3em;
+    line-height:.8em;
+    color: #FF9AE9;
+    padding: 20px;
+    top: 200px;
+    left: 50px;
+}
+
+span{
+    font-family: klaus ;
+    font-weight: 100;
+    font-size: 1em;
+}
+
+
+.textblock1 {
+    position: absolute;
+    top: 300px;
+    left: 12%;
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+.textblock1.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+.textblock2{
+    position: absolute;
+    top: 300px;
+    left: 40%;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: transform 0.9s ease-out, opacity 0.9s ease-out;
+}
+
+.textblock2.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+.textblock3{
+    position: absolute;
+    top: 480px;
+    left: 65%;
+    opacity: 0;
+    transform: scale(0) rotate(-45deg);
+    transition: transform 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.7s ease-out;
+}
+
+.textblock3.show {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+.textblock4{
+    position: absolute;
+    top: 420px;
+    left: 25%;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+.textblock4.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.textblock5{
+    position: absolute;
+    top: 300px;
+    left: 68%;
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: transform 0.9s ease-out, opacity 0.9s ease-out;
+}
+
+.textblock5.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+.textblock6{
+    position: absolute;
+    top: 550px;
+    left: 8%;
+    opacity: 0;
+    transform: perspective(600px) rotateY(90deg);
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+.textblock6.show {
+    opacity: 1;
+    transform: perspective(600px) rotateY(0deg);
+}
+
+
+.textblock7{
+    position: absolute;
+    top: 550px;
+    left: 30%;
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.6s ease-out;
+}
+
+.textblock7.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+.textblock8{
+    position: absolute;
+    top: 460px;
+    left: 52%;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+.textblock8.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.textblock9{
+    position: absolute;
+    top: 650px;
+    left: 15%;
+    opacity: 0;
+    transform: translate(-50px, -50px);
+    transition: transform 0.9s ease-out, opacity 0.9s ease-out;
+}
+
+.textblock9.show {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.textblock10{
+    position: absolute;
+    top: 680px;
+    left: 65%;
+    opacity: 0;
+    transform: scaleX(0);
+    transition: transform 0.7s ease-out, opacity 0.7s ease-out;
+}
+
+.textblock10.show {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.textblock11{
+    position: absolute;
+    top: 700px;
+    left: 40%;
+    opacity: 0;
+    transform: scale(0) rotate(180deg);
+    transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.8s ease-out;
+}
+
+.textblock11.show {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+.hidden {
+    opacity: 0;
+}
+
+
+.nextpagebutton {
+    position: relative;
+    top: 1200px;
+    left: -950px;
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.6s ease-out;
+}
+
+.nextpagebutton.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#nextBtn {
+    position: fixed;
+    right: 50px;
+    top: 260px;
+}
+
+#deleteBtn {
+    position: fixed;
+    right: 50px;
+    top: 330px;
+}
+
+button{
+    display: flex;
+    direction:  row;  
+    justify-content: center;
+    align-items: center;
+    font-family: klausthin;
+    font-size: 0.7em;
+    color: #FF9AE9;
+    background-color: transparent;
+    border: 1px solid #FF9AE9;
+    border-radius: 100%;
+    padding: 10px 20px;
+    width: 60px;
+    height: 60px;
+}
+
+.button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-top: 30px;
+    gap: 10px;
+    margin-left: 50px;
+    position: relative;
+}
+
+.button-container2{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 10px;
+    margin-left: 50px;
+    position: relative;
+    top: -60px;
+    left: 1210px;
+}
+
+button:hover{
+    background-color: #FF9AE9;
+    color: #2900F5;
+    border: 1px solid #FF9AE9;
+    transition: 0.3s ease-in-out;
+}
+ 
+#pagebutton{
+    background-color: #FF9AE9;
+    color: #2900F5;
+}
+
+a{
+    text-decoration: none;
+}

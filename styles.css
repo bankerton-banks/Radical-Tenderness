@@ -5,53 +5,82 @@
 }
 
 @font-face {
-    font-family: YoungSerif ;
-    src: url(fonts/YoungSerif-Regular.otf);
+    font-family: Klaus ;
+    src: url(fonts/MNKYKlausTRIAL-Light.otf);
 }
 
 @font-face {
-    font-family: Insitu;
-    src: url(fonts/for-insituunlicensedtrial-light.otf);
+    font-family: klausthin;
+    src: url(fonts/MNKYKlausTRIAL-Thin.otf);
 }
 
+
 .text1{
-    font-family: YoungSerif;
-    font-size: 125pt;
-    font-weight: regular;
+    font-family: Klaus;
+    font-size: 9em;
+    font-weight: 115;
     color: #FF9AE9;
     top: 80px;
     left: 100px;
     position: absolute;
     line-height: 90pt;
-    letter-spacing: -2px;
+    letter-spacing: -7pt;
     pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.text1.hidden {
+    opacity: 0;
 }
 
 .text2{
-    font-size: 40;
-    font-family: Insitu;
+    font-size: 1em;
+    font-family: klausthin;
     font-weight: light;
     color: #FF9AE9;
     position: absolute;
-    top: 380px;
-    left: 100px;
+    top: 350px;
+    left: 110px;
     pointer-events: none;
+    transition: opacity 0.5s ease;
 }
 
-.image1{
-    width: 650px;
-    position: absolute;
-    top: 0px;
-    left: 850px;
-    cursor: pointer;
-    pointer-events: auto;
+.text2.hidden {
+    opacity: 0;
 }
 
-.image2{
-    width: 1000px;
-    position: absolute;
-    top: 70px;
-    left: 500px;
-    pointer-events: none;
-    display: none;
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+}
+
+.image1 {
+  cursor: pointer;
+  transition: opacity 0.5s ease;
+  width: 700px;
+  top: 50px;
+  margin-left: 800px;
+}
+
+.image2 {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 1.5s;
+  cursor: pointer;
+  width: 1200px;
+}
+
+.image2.active {
+  opacity: 1;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  pointer-events: auto;
+}
+
+.image1.hidden {
+  opacity: 0;
 }

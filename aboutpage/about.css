@@ -1,0 +1,111 @@
+*{
+    box-sizing: border-box;
+    margin: 10px;
+    padding: 0;
+}
+
+@font-face {
+    font-family: Klaus ;
+    src: url(../fonts/MNKYKlausTRIAL-Light.otf);
+}
+
+@font-face {
+    font-family: klausthin;
+    src: url(../fonts/MNKYKlausTRIAL-Thin.otf);
+}
+
+h1{
+    font-family: Klaus ;
+    font-size: 8em;
+    font-weight: 100;
+    color: #FF9AE9;
+    margin-top: 30px;
+    margin-left: 30px;
+    letter-spacing: -0.08em;
+    line-height: 0.8
+}
+
+p{
+    font-family: klausthin;
+    font-size: 1.3em;
+    line-height: 1em;
+    color: #FF9AE9;
+    padding: 20px;
+    width: 800px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-top: -350px;
+    margin-right: -20px;
+
+}
+
+BODY{
+    background-color: #2900F5;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+button{
+    display: flex;
+    direction:  row;  justify-content: center;  /* centers horizontally */
+    align-items: center;      /* centers vertically */
+    font-family: klausthin;
+    font-size: 0.7em;
+    color: #FF9AE9;
+    background-color: transparent;
+    border: 1px solid #FF9AE9;
+    border-radius: 100%;
+    padding: 10px 20px;
+    margin-left: 0px;
+    width: 60px;
+    height: 60px;
+}
+
+.button-container{
+    display: flex;
+    flex-direction:  row;
+    justify-content: left;
+    margin-top: 0px;
+    gap: 10px;
+    margin-left: 30px;
+    position: absolute;
+
+}
+
+.button-container2{
+    display: flex;
+    flex-direction:  row;
+    justify-content: right;
+    gap: -0px;
+    margin-left: 55px;
+    margin-right: 50px;
+    position: absolute;
+    left: 100px;
+    margin-top: 0px;
+    letter-spacing: -10pt;
+
+}
+
+button:hover{
+    background-color: #FF9AE9;
+    color: #2900F5;
+    border: 1px solid #FF9AE9;
+    transition: 0.3s ease-in-out;
+}
+
+a{
+    text-decoration: none;
+}
+
+body {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE10+/Edge */
+    user-select: none;         /* Standard */
+}

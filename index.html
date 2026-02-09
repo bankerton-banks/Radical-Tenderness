@@ -9,27 +9,56 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body style="background-color:#2900F5">
-        <div>
-            <p class="text1">You've been <br> invited</p>
-        </div>
-        <div class="text2">
-            <p>open the letter to change it all</p>
-        </div>
-        <a href="entry-page-2/entrypage-2.html"><img src="images/pink.svg" class="image1"></a>
-        <a href="entry-page-2/entrypage-2.html"><img src="images/pink.svg" class="image2"></a>
+       <div>
+  <p class="text1" id="text1">You've been <br> invited</p>
+</div>
+<div class="text2" id="text2">
+  <p>click on the letter to continue</p>
+</div>
+
+<div class="image-container">
+  <img src="images/pink.svg" class="image1" id="element1" onclick="switchElement()">
+  <a href="home-page/homepage.html"><img src="images/letter.svg" class="image2" id="element2" onclick="fadeText()"></a>
+</div>
         
-        <script>
-            window.onload = function() {
-                const blackEnvelope = document.querySelector('.image1');
-                
-                blackEnvelope.onmouseenter = function() {
-                    this.src = "images/pink.svg";
-                    this.style.transition = 'all 1s ease-in-out';
-                    this.style.top = '70px';
-                    this.style.left = '500px';
-                    this.style.width = '1000px';
-                };
-            };
-        </script>
-    </body>
+<script>
+function switchElement() {
+  const image1 = document.getElementById('element1');
+  const image2 = document.getElementById('element2');
+  const text1 = document.getElementById('text1');
+  
+  // Get the position of the first image
+  const rect = image1.getBoundingClientRect();
+  
+  // Set the second image to start at the first image's position
+  image2.style.top = rect.top + 'px';
+  image2.style.left = rect.left + 'px';
+  image2.style.transform = 'translate(0, 0)';
+  image2.style.opacity = '1';
+  
+  // Hide the first image
+  image1.classList.add('hidden');
+  
+  // Fade out text1 ("You've been invited")
+  if (text1) {
+    text1.classList.add('hidden');
+      if (text2) {
+    text2.classList.add('hidden');
+  }
+  
+  // Animate the second image to center after a brief moment
+  setTimeout(() => {
+    image2.classList.add('active');
+  }, 50);
+}
+
+function fadeText() {
+  const text2 = document.getElementById('text2');
+  
+  // Fade out text2 ("open the letter...")
+
+  }
+}
+</script>
+</body>
 </html>

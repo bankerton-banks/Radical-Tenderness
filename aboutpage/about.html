@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="about.css">
+    </head>
+    <body>
+        <h1>About<br>
+            this<br>
+            site<br>
+        </h1>
+
+        <div class="button-container">
+            <a href="../home-page/homepage.html"><button>home</button></a> 
+        </div>
+
+        <div class="button-container2">
+          <a href="../textpage1/textpage1.html"><button>.✦ ݁˖</button></a> 
+          <a href="../textpage2/textpage.html"><button>⋆˚꩜｡</button></a>
+          <a href="../textpage3/textpage3.html"><button>₊˚⊹♡</button></a>
+        </div>
+
+         <div class="container">
+           <div class="text1">
+                <p>
+                Invitation to Radical Tenderness, by Dani
+                d’Emilia and Vanessa Andreotti (2018)
+                registers thoughts expressed by the
+                collective ‘Gesturing Towards Decolonial
+                Futures’ and is part of the broader
+                artistic-pedagogic collaboration ‘Engaged
+                dis-identifications’, which explores the
+                workings of non-notional possibilities
+                of co-existence through performative
+                practices. With the support of Musagetes
+                Foundation, this collaboration attempts to
+                translate post-representational modes of
+                engagement into embodied experiments
+                that reconfigure the connections between
+                reason, affect and relationality. More info
+                about Gesturing Towards Decolonial
+                Futures can be accessed in the following
+                link: https://decolonialfutures.net
+                </p>
+            </div>
+            <div class="text2">
+                <p>
+                Radical Tenderness is a term that Dani first
+                encountered through her collaboration with
+                the transnational performance collective
+                La Pocha Nostra, with whom she worked
+                between 2008-2016. Since then she has
+                been engaged in a deeper quest to explore
+                what radical tenderness, as a concept-prac-
+                tice-affect means and does at a personal,
+                political and existential level. A first radical
+                tenderness manifesto was written by Dani
+                in collaboration with Daniel B.Chavez in 2015
+                and can be accessed in the following link:
+                https://danidemilia.com/radical-tenderness
+                </p>
+            </div>
+         </div>
+        <script src="" async defer></script>
+        <script>
+        // ========== TRIPLE-CLICK COLOR ANIMATION ==========
+// Customizable color arrays - change these to your preferred colors!
+const backgroundColors = ['#990559', '#165C1C', '#F08DFF', '#FAC8C9', '#E74447', '#5D2800'];
+const textColors = ['#52A7E7', '#FFB055', '#0D409F', '#115B80', '#E4F2FF', '#B5FFA4'];
+
+let tripleClickCount = 0;
+let clickTimer = null;
+let animationInterval = null;
+let animationTimeout = null;
+let isAnimating = false;
+let currentBgColor = '#2900F5';
+let currentTextColor = '#FF9AE9';
+
+// Get all elements that need color changes
+const body = document.body;
+const allText = document.querySelectorAll('h1, p, button');
+const buttons = document.querySelectorAll('button');
+
+// Add hover listeners to buttons
+buttons.forEach(btn => {
+    btn.addEventListener('mouseenter', function() {
+        this.style.backgroundColor = currentTextColor;
+        this.style.color = currentBgColor;
+    });
+    
+    btn.addEventListener('mouseleave', function() {
+        this.style.backgroundColor = 'transparent';
+        this.style.color = currentTextColor;
+    });
+});
+
+document.addEventListener('click', function(e) {
+    // If animating, lock in the current colors
+    if (isAnimating) {
+        clearInterval(animationInterval);
+        clearTimeout(animationTimeout);
+        isAnimating = false;
+        tripleClickCount = 0;
+        return; // Exit early, keeping current colors
+    }
+    
+    // Otherwise, count clicks for triple-click
+    tripleClickCount++;
+    
+    // Clear previous timer
+    if (clickTimer) {
+        clearTimeout(clickTimer);
+    }
+    
+    // Check for triple click
+    if (tripleClickCount === 3) {
+        startColorAnimation();
+        tripleClickCount = 0;
+    } else {
+        // Reset click count after 500ms if no triple click
+        clickTimer = setTimeout(() => {
+            tripleClickCount = 0;
+        }, 500);
+    }
+});
+
+function startColorAnimation() {
+    // Clear any existing animation
+    if (animationInterval) {
+        clearInterval(animationInterval);
+    }
+    if (animationTimeout) {
+        clearTimeout(animationTimeout);
+    }
+    
+    isAnimating = true;
+    
+    // Change interval time here (in milliseconds)
+    // 100 = very fast, 300 = moderate, 500 = slower, 1000 = 1 second per change
+    animationInterval = setInterval(() => {
+        const randomBgColor = backgroundColors[Math.floor(Math.random() * backgroundColors.length)];
+        const randomTextColor = textColors[Math.floor(Math.random() * textColors.length)];
+        
+        // Store current colors
+        currentBgColor = randomBgColor;
+        currentTextColor = randomTextColor;
+        
+        body.style.backgroundColor = randomBgColor;
+        
+        allText.forEach(element => {
+            element.style.color = randomTextColor;
+        });
+        
+        // Update button borders
+        document.querySelectorAll('button').forEach(btn => {
+            btn.style.borderColor = randomTextColor;
+        });
+    }, 200); // <-- CHANGE THIS NUMBER! 200ms = changes every 0.2 seconds
+    
+    // Stop after 5 seconds and return to original colors
+    animationTimeout = setTimeout(() => {
+        clearInterval(animationInterval);
+        isAnimating = false;
+        
+        // Return to original colors
+        currentBgColor = '#2900F5';
+        currentTextColor = '#FF9AE9';
+        
+        body.style.backgroundColor = '#2900F5';
+        allText.forEach(element => {
+            element.style.color = '#FF9AE9';
+        });
+        document.querySelectorAll('button').forEach(btn => {
+            btn.style.borderColor = '#FF9AE9';
+        });
+    }, 2000);
+}
+</script>
+    </body>
+</html>

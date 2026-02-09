@@ -13,22 +13,144 @@
         <link rel="stylesheet" href="homepage.css">
     </head>
     <body style="background-color: #2900F5;">
-         <div class="parent1">
-            <a href="../textpage/textpage.html"><p class="child1"> Radical Tenderness Is </p> </a>
-            <a href="../textpage/textpage.html"><p class="child2">(1)</p></a>
-            <a href="../textpage/textpage.html"><p class="child3"> You must <br>start here</p></a>
-         </div>
-           <div class="parent2">
-            <p class="child1"> Radical Tenderness Is </p>
-            <p class="child4">(2)</p>
-         </div>
-         <div class="parent3">
-            <p class="child1"> Radical Tenderness Is </p>
-            <p class="child2">(3)</p>
-            <p class="child3"> You'll get here <br> eventually</p>
-         </div>
+
+        <div class="button-container">
+            <a href="../index.html"><button>home</button></a> 
+            <a href="../aboutpage/about.html"><button>about</button></a> 
+        </div>
+
+        <div class="button-container2">
+          <a href="../textpage1/textpage1.html"><button>.✦ ݁˖</button></a> 
+          <a href="../textpage2/textpage.html"><button>⋆˚꩜｡</button></a>
+          <a href="../textpage3/textpage3.html"><button>₊˚⊹♡</button></a>
+        </div>
+
+        <div class="parent1 hover">
+               <p class="child1"> Radical Tenderness Is </p> 
+            </div>
+         
+            <div class="parent3 hover">
+                <p class="child1"> Radical Tenderness Is </p>
+            </div>
+
+             <div class="parent2 hover">
+                <p class="child1"> Radical Tenderness Is </p>
+            </div>
         
         
-        <script src="" async defer></script>
+        <p class="fish hover">𓆝 𓆟 𓆞 𓆝 𓆟</p>
+<script>
+    // Customizable color arrays - change these to your preferred colors!
+    const backgroundColors = ['#990559', '#165C1C', '#F08DFF', '#FAC8C9', '#E74447', '#5D2800'];
+    const textColors = ['#52A7E7', '#FFB055', '#0D409F', '#115B80', '#E4F2FF', '#B5FFA4'];
+    
+    let clickCount = 0;
+    let clickTimer = null;
+    let animationInterval = null;
+    let animationTimeout = null;
+    let isAnimating = false;
+    let currentBgColor = '#2900F5';
+    let currentTextColor = '#FF9AE9';
+    
+    // Get all elements that need color changes
+    const body = document.body;
+    const allText = document.querySelectorAll('.child1, .child2, .child3, .child4, button, p');
+    const buttons = document.querySelectorAll('button');
+    
+    // Add hover listeners to buttons
+    buttons.forEach(btn => {
+        btn.addEventListener('mouseenter', function() {
+            this.style.backgroundColor = currentTextColor;
+            this.style.color = currentBgColor;
+        });
+        
+        btn.addEventListener('mouseleave', function() {
+            this.style.backgroundColor = 'transparent';
+            this.style.color = currentTextColor;
+        });
+    });
+    
+    document.addEventListener('click', function() {
+        // If animating, lock in the current colors
+        if (isAnimating) {
+            clearInterval(animationInterval);
+            clearTimeout(animationTimeout);
+            isAnimating = false;
+            clickCount = 0;
+            return; // Exit early, keeping current colors
+        }
+        
+        // Otherwise, count clicks for triple-click
+        clickCount++;
+        
+        // Clear previous timer
+        if (clickTimer) {
+            clearTimeout(clickTimer);
+        }
+        
+        // Check for triple click
+        if (clickCount === 3) {
+            startColorAnimation();
+            clickCount = 0;
+        } else {
+            // Reset click count after 500ms if no triple click
+            clickTimer = setTimeout(() => {
+                clickCount = 0;
+            }, 500);
+        }
+    });
+    
+    function startColorAnimation() {
+        // Clear any existing animation
+        if (animationInterval) {
+            clearInterval(animationInterval);
+        }
+        if (animationTimeout) {
+            clearTimeout(animationTimeout);
+        }
+        
+        isAnimating = true;
+        
+        // Change interval time here (in milliseconds)
+        // 100 = very fast, 300 = moderate, 500 = slower, 1000 = 1 second per change
+        animationInterval = setInterval(() => {
+            const randomBgColor = backgroundColors[Math.floor(Math.random() * backgroundColors.length)];
+            const randomTextColor = textColors[Math.floor(Math.random() * textColors.length)];
+            
+            // Store current colors
+            currentBgColor = randomBgColor;
+            currentTextColor = randomTextColor;
+            
+            body.style.backgroundColor = randomBgColor;
+            
+            allText.forEach(element => {
+                element.style.color = randomTextColor;
+            });
+            
+            // Update button borders
+            document.querySelectorAll('button').forEach(btn => {
+                btn.style.borderColor = randomTextColor;
+            });
+        }, 200); // <-- CHANGE THIS NUMBER! 600ms = changes every 0.6 seconds
+        
+        // Stop after 5 seconds and return to original colors
+        animationTimeout = setTimeout(() => {
+            clearInterval(animationInterval);
+            isAnimating = false;
+            
+            // Return to original colors
+            currentBgColor = '#2900F5';
+            currentTextColor = '#FF9AE9';
+            
+            body.style.backgroundColor = '#2900F5';
+            allText.forEach(element => {
+                element.style.color = '#FF9AE9';
+            });
+            document.querySelectorAll('button').forEach(btn => {
+                btn.style.borderColor = '#FF9AE9';
+            });
+        }, 2000);
+    }
+</script>
     </body>
 </html>

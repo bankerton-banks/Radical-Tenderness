@@ -5,26 +5,33 @@
 }
 
 @font-face {
-    font-family: YoungSerif;
-    src: url(fonts/YoungSerif-Regular.otf);
+    font-family: Klaus ;
+    src: url(fonts/MNKYKlausTRIAL-Light.otf);
 }
 
 @font-face {
-    font-family: insitu;
-    src: url(fonts/for-insituunlicensedtrial-light.otf);
+    font-family: klausthin;
+    src: url(fonts/MNKYKlausTRIAL-Thin.otf);
 }
+
 .parent1{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    margin-top: 75px;
+
 }
 
+
+
+
 .child1{
-    font-family: YoungSerif;
+    font-family: Klaus;
     font-size: 8em;
     color: #FF9AE9;
+    letter-spacing: -7pt;
     margin-left: 50px;
-    margin-top: 30px;
+    margin-top: -50px;
     flex-direction: column;
 }
 
@@ -33,7 +40,7 @@ a{
 }
 
 .child2{
-    font-family: insitu;
+    font-family: klaus;
     font-size: 1.5em;
     color: #FF9AE9;
     align-self: flex-start;
@@ -49,15 +56,7 @@ a{
     margin-left: 50px;
 }
 
-.parent2{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    rotate: 45deg;
-    margin-left: 700px;
-    margin-top: -150px;
-    white-space: nowrap;
-}
+
 
 .child4{
     font-family: insitu;
@@ -73,7 +72,107 @@ a{
     justify-content: center;
     flex-direction: column;
     rotate: 90deg;
-    margin-left: 1250px;
+    left: 790px;
+    position: absolute;
     white-space: nowrap;
-    margin-top: -200px;
+    margin-top: 400px;
+    
 }
+
+.parent2{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+   rotate: 90deg;
+    left: 670px;
+    position: absolute;
+    white-space: nowrap;
+    margin-top: 0px;
+  
+}
+
+
+
+body{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+button{
+    display: flex;
+    direction:  column;  justify-content: center;  /* centers horizontally */
+    align-items: center;      /* centers vertically */
+    font-family: klausthin;
+    font-size: 0.7em;
+    color: #FF9AE9;
+    background-color: transparent;
+    border: 1px solid #FF9AE9;
+    border-radius: 100%;
+    padding: 10px 20px;
+    margin-left: 0px;
+    width: 60px;
+    height: 60px;
+}
+
+.button-container{
+    display: flex;
+    flex-direction:  column;
+    justify-content: left;
+    margin-top: 120px;
+    gap: 10px;
+    margin-left: 55px;
+    position: absolute;
+
+}
+
+.button-container2{
+    display: flex;
+    flex-direction:  column;
+    justify-content: right;
+    gap: 10px;
+    margin-left: 55px;
+    margin-right: 50px;
+    position: absolute;
+    left: 0px;
+    margin-top: 400px;
+    letter-spacing: -10pt;
+
+}
+
+button:hover{
+    background-color: #FF9AE9;
+    color: #2900F5;
+    border: 1px solid #FF9AE9;
+    transition: 0.3s ease-in-out;
+}
+
+p{
+    font-family: klaus;
+    font-size: 3em;
+    color: #FF9AE9;
+    margin-top: 500px;
+    margin-left: 50px;
+}
+
+.fish{
+    left: 400px;
+    top: 600px;
+    display: none;
+}
+
+body{
+    overflow-x: hidden;
+    overflow-y: hidden;
+    user-select: none; /* Prevents text selection */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+}
+
+.parent1, .parent2, .parent3, a {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+
+
