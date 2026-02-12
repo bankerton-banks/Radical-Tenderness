@@ -18,7 +18,7 @@
 
 <div class="image-container">
   <img src="images/pink.svg" class="image1" id="element1" onclick="switchElement()">
-  <a href="home-page/homepage.html"><img src="images/letter.svg" class="image2" id="element2" onclick="fadeText()"></a>
+  <img src="images/newenvelope.svg" class="image2" id="element2">
 </div>
         
 <script>
@@ -26,6 +26,7 @@ function switchElement() {
   const image1 = document.getElementById('element1');
   const image2 = document.getElementById('element2');
   const text1 = document.getElementById('text1');
+  const text2 = document.getElementById('text2');
   
   // Get the position of the first image
   const rect = image1.getBoundingClientRect();
@@ -36,28 +37,52 @@ function switchElement() {
   image2.style.transform = 'translate(0, 0)';
   image2.style.opacity = '1';
   
+  // Store the starting position for the reverse animation
+  const startTop = rect.top;
+  const startLeft = rect.left;
+  
   // Hide the first image
   image1.classList.add('hidden');
   
-  // Fade out text1 ("You've been invited")
+  // Fade out text
   if (text1) {
     text1.classList.add('hidden');
-      if (text2) {
+  }
+  if (text2) {
     text2.classList.add('hidden');
   }
   
-  // Animate the second image to center after a brief moment
+  // Animate the second image to center
   setTimeout(() => {
     image2.classList.add('active');
   }, 50);
-}
-
-function fadeText() {
-  const text2 = document.getElementById('text2');
   
-  // Fade out text2 ("open the letter...")
+  // Wait 2 seconds at center, then reverse the animation
+  setTimeout(() => {
+    // Remove 'active' class and move back to starting position
+    image2.classList.remove('active');
+    image2.style.top = startTop + 'px';
+    image2.style.left = startLeft + 'px';
+    image2.style.transform = 'translate(0, 0)';
+    image2.style.opacity = '0';
+    
+    // Wait for reverse transition to complete (1.5s), then navigate
+    setTimeout(() => {
+      window.location.href = 'home-page/homepage.html';
+    }, 1500);
+  }, 2500);
 
-  }
+  // In your switchElement function, replace the navigation setTimeout with this:
+setTimeout(() => {
+  // Fade out the entire body
+  document.body.style.transition = 'opacity 0.5s ease-out';
+  document.body.style.opacity = '0';
+  
+  // Navigate after fade completes
+  setTimeout(() => {
+    window.location.href = 'home-page/homepage.html';
+  }, 500);
+}, 1500);
 }
 </script>
 </body>

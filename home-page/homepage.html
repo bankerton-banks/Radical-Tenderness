@@ -151,6 +151,18 @@
             });
         }, 2000);
     }
+
+      // In your switchElement function, replace the navigation setTimeout with this:
+setTimeout(() => {
+  // Fade out the entire body
+  document.body.style.transition = 'opacity 0.5s ease-out';
+  document.body.style.opacity = '0';
+  
+  // Navigate after fade completes
+  setTimeout(() => {
+    window.location.href = 'home-page/homepage.html';
+  }, 500);
+}, 1500);
 </script>
     </body>
 </html>
