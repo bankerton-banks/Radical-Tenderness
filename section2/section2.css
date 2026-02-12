@@ -1,0 +1,269 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face{
+    font-family: Klaus ;
+    src: url(../fonts/MNKYKlausTRIAL-Regular.otf);
+}
+
+@font-face{
+    font-family: Klausthin ;
+    src: url(../fonts/MNKYKlausTRIAL-Thin.otf);
+}
+
+h1{
+    font-family: Klaus ;
+    font-size: 7em;
+    font-weight: 100;
+    color: #FF9AE9;
+    margin-left: 50px;
+    margin-top: 50px;
+    letter-spacing: -0.08em;
+    line-height: 70pt;
+}
+
+h4{
+    font-family: Klausthin ;
+    font-size: 1em;
+    font-weight: 100;
+    color:  #FF9AE9;
+    margin-top: 0px;
+    margin-left: 60px;
+    line-height: 35pt;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: #2900F5;
+}
+
+html {
+    height: 100%;
+}
+
+p{
+    font-family: klausthin;
+    font-size: 1.3em;
+    line-height:.8em;
+    color: #FF9AE9;
+    padding: 20px;
+    top: 200px;
+    left: 50px;
+}
+
+
+button{
+    display: flex;
+    direction:  row;  
+    justify-content: center;
+    align-items: center;
+    font-family: klausthin;
+    font-size: 0.7em;
+    color: #FF9AE9;
+    background-color: transparent;
+    border: 1px solid #FF9AE9;
+    border-radius: 100%;
+    padding: 10px 20px;
+    width: 60px;
+    height: 60px;
+}
+
+.button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-top: 5ch;
+    gap: 10px;
+    margin-left: 1330px;
+    position: absolute;
+
+}
+
+.button-container2{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 10px;
+    margin-left: -1150px;
+    position: absolute;
+    top: 180px;
+    left: 1210px;
+}
+
+button:hover{
+    background-color: #FF9AE9;
+    color: #2900F5;
+    border: 1px solid #FF9AE9;
+    transition: 0.3s ease-in-out;
+}
+ 
+/* Hamburger Button */
+.hamburger {
+    position: fixed;
+    top: 100px;
+    right: 50px;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border: 1px solid #FF9AE9;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 0;
+    transition: transform 0.3s ease;
+}
+
+.hamburger span {
+    width: 20px;
+    height: 2px;
+    background-color: #FF9AE9;
+    transition: all 0.3s ease;
+}
+
+/* Remove hover effect when hamburger is open (X state) */
+.hamburger.open:hover {
+    background-color: transparent !important;
+}
+
+.hamburger.open:hover span {
+    background-color: #FF9AE9 !important;
+}
+
+/* Keep normal hover when closed */
+.hamburger:hover {
+    background-color: #FF9AE9;
+}
+
+.hamburger:hover span {
+    background-color: #2900F5;
+}
+
+/* Animate to X when open */
+.hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Menu Panel */
+.menu-panel {
+    position: fixed;
+    top: 50px;
+    right: -350px;
+    width: 300px;
+    height: 500px;
+    background-color: #FF9AE9;
+    z-index: 1500;
+    transition: right 0.4s ease-in-out;
+    border-radius: 30px;
+}
+
+.menu-panel.open {
+    right: 0;
+}
+
+.menu-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    gap: 15px;
+}
+
+/* Keep menu buttons always visible without hover background change */
+.menu-content button {
+    background-color: transparent !important;
+    color: #2900F5 !important;
+    border-color: #2900F5;
+    width: 90px;
+    height: 90px;
+    border-radius: 100px;
+}
+
+.menu-content button:hover {
+    background-color:  #2900F5 !important;
+    color: #FF9AE9 !important;
+    border-color: #2900F5;
+  
+}
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 3em;
+    background: transparent !important;
+    border: none !important;
+    color: #2900F5 !important;
+    cursor: pointer;
+    width: auto !important;
+    height: auto !important;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    background: transparent !important;
+    color: #2900F5 !important;
+    opacity: 1 !important;
+}
+
+
+
+/* Remove old button containers */
+.button-container,
+.button-container2 {
+    display: none;
+}
+
+#pagebutton{
+    background-color: #FF9AE9;
+    color: #2900F5;
+}
+
+a{
+    text-decoration: none;
+}
+
+.nextpagebutton {
+    position: relative;
+    top: 400px;
+    left: 1400px;
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.6s ease-out;
+}
+
+.nextpagebutton.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#nextBtn {
+    position: fixed;
+    right: 50px;
+    top: 260px;
+}
+
+#deleteBtn {
+    position: fixed;
+    right: 50px;
+    top: 330px;
+}

@@ -22,9 +22,11 @@
 
 }
 
+
 body {
   opacity: 0;
-  animation: fadeIn 1.5s ease-in forwards;
+  animation: fadeIn 1s ease-in forwards;
+  overflow: hidden ;
 }
 
 @keyframes fadeIn {
@@ -37,13 +39,64 @@ body {
 }
 
 
+.side-panel {
+    position: fixed;
+    top: 0;
+    right: -800px; 
+    width: 600px;
+    height: 100vh;
+    background-color: #FF9AE9;
+    transition: right 0.4s ease-in-out;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.side-panel.open {
+    right: 0; 
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2em;
+    background: transparent;
+    border: none;
+    color: #2900F5;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+}
+
+
+.panel-content h2 {
+    font-family: Klausthin;
+    font-size: 5em;
+    margin: 50px;
+    margin-bottom: 130px;
+    letter-spacing: -3pt;
+    color: #2900F5;
+}
+
+.panel-content p {
+    font-family: klausthin;
+    font-size: 1.2em;
+    line-height: 1.2em;
+    margin: 0;
+    max-width: 500px;
+    color: #2900F5;
+    margin-left: 50px;
+}
+
 .child1{
     font-family: Klaus;
-    font-size: 8em;
+    font-size: 6em;
     color: #FF9AE9;
-    letter-spacing: -7pt;
+    letter-spacing: -5pt;
     margin-left: 50px;
-    margin-top: -50px;
+    margin-top: -30px;
     flex-direction: column;
 }
 
@@ -58,6 +111,7 @@ a{
     align-self: flex-start;
     margin-left: 50px;
     margin-top: -30px;
+    display: none;
 }
 
 .child3{
@@ -105,11 +159,6 @@ a{
 
 
 
-body{
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
-
 button{
     display: flex;
     direction:  column;  justify-content: center;  /* centers horizontally */
@@ -125,28 +174,50 @@ button{
     width: 60px;
     height: 60px;
 }
+.large-btn {
+    width: 400px !important;  
+    height: 400px !important;  
+    font-size: 7em !important;  
+    border: 3px solid #FF9AE9 !important;
+}
+
+.button2{
+    display: flex;
+    direction:  column;  justify-content: center;  /* centers horizontally */
+    align-items: center;      /* centers vertically */
+    font-family: klausthin;
+    font-size: 0.7em;
+    color: #FF9AE9;
+    background-color: transparent;
+    border: 1px solid #FF9AE9;
+    border-radius: 100%;
+    padding: 10px 20px;
+    margin-left: 0px;
+    width: 200px;
+    height: 60px;
+}
 
 .button-container{
     display: flex;
-    flex-direction:  column;
+    flex-direction:  row;
     justify-content: left;
-    margin-top: 120px;
+    margin-top: 10px;
     gap: 10px;
-    margin-left: 55px;
+    margin-left: 1320px;
     position: absolute;
 
 }
 
 .button-container2{
     display: flex;
-    flex-direction:  column;
+    flex-direction:  row;
     justify-content: right;
-    gap: 10px;
+    gap: 50px;
     margin-left: 55px;
     margin-right: 50px;
     position: absolute;
-    left: 0px;
-    margin-top: 400px;
+    left: 50px;
+    margin-top: 250px;
     letter-spacing: -10pt;
 
 }
@@ -188,3 +259,44 @@ body{
 
 
 
+
+
+@media screen and (max-width: 768px) {
+    .panel-content h2 {
+        font-size: 3em;
+        margin: 20px;
+        margin-bottom: 50px;
+    }
+    
+    .panel-content p {
+        font-size: 1em;
+        line-height: 1.2em;
+        margin: 0;
+        max-width: 100%;
+    }
+    
+    .child1 {
+        font-size: 5em;
+        letter-spacing: -4pt;
+        margin-left: 20px;
+        margin-top: -30px;
+    }
+    
+    .child2 {
+        font-size: 1em;
+        margin-left: 20px;
+        margin-top: -20px;
+    }
+    
+    .child3 {
+        font-size: 0.8em;
+        margin-left: 20px;
+    }
+    
+    .child4 {
+        font-size: 1em;
+        margin-left: 20px;
+        margin-top: -20px;
+    }
+    
+}

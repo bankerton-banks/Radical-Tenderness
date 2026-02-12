@@ -16,17 +16,17 @@
 
 h1{
     font-family: Klaus ;
-    font-size: 8em;
+    font-size: 7em;
     font-weight: 100;
     color: #FF9AE9;
     margin-left: 50px;
-    margin-top: -40px;
+    margin-top: 50px;
     letter-spacing: -0.08em;
     line-height: 100pt;
 }
 
 h4{
-    font-family: Klaus;
+    font-family: Klausthin ;
     font-size: 1em;
     font-weight: 100;
     color:  #FF9AE9;
@@ -62,14 +62,13 @@ span{
     font-size: 1em;
 }
 
-
 .textblock1 {
     position: absolute;
     top: 300px;
     left: 12%;
     opacity: 0;
-    transform: scale(0);
-    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+    transform: scale(0.8);
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
 }
 
 .textblock1.show {
@@ -83,13 +82,11 @@ span{
     top: 300px;
     left: 40%;
     opacity: 0;
-    transform: translateX(100px);
-    transition: transform 0.9s ease-out, opacity 0.9s ease-out;
+    transition: opacity 0.6s ease-out;
 }
 
 .textblock2.show {
     opacity: 1;
-    transform: translateX(0);
 }
 
 
@@ -98,13 +95,13 @@ span{
     top: 480px;
     left: 65%;
     opacity: 0;
-    transform: scale(0) rotate(-45deg);
-    transition: transform 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.7s ease-out;
+    transform: scale(0.8);
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
 }
 
 .textblock3.show {
     opacity: 1;
-    transform: scale(1) rotate(0deg);
+    transform: scale(1);
 }
 
 .textblock4{
@@ -112,13 +109,11 @@ span{
     top: 420px;
     left: 25%;
     opacity: 0;
-    transform: translateY(50px);
-    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+    transition: opacity 0.6s ease-out;
 }
 
 .textblock4.show {
     opacity: 1;
-    transform: translateY(0);
 }
 
 
@@ -127,13 +122,13 @@ span{
     top: 300px;
     left: 68%;
     opacity: 0;
-    transform: translateX(-100px);
-    transition: transform 0.9s ease-out, opacity 0.9s ease-out;
+    transform: scale(0.8);
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
 }
 
 .textblock5.show {
     opacity: 1;
-    transform: translateX(0);
+    transform: scale(1);
 }
 
 
@@ -142,13 +137,11 @@ span{
     top: 550px;
     left: 8%;
     opacity: 0;
-    transform: perspective(600px) rotateY(90deg);
-    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+    transition: opacity 0.6s ease-out;
 }
 
 .textblock6.show {
     opacity: 1;
-    transform: perspective(600px) rotateY(0deg);
 }
 
 
@@ -157,8 +150,8 @@ span{
     top: 550px;
     left: 30%;
     opacity: 0;
-    transform: scale(0);
-    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.6s ease-out;
+    transform: scale(0.8);
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
 }
 
 .textblock7.show {
@@ -172,13 +165,11 @@ span{
     top: 460px;
     left: 52%;
     opacity: 0;
-    transform: translateY(-50px);
-    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+    transition: opacity 0.6s ease-out;
 }
 
 .textblock8.show {
     opacity: 1;
-    transform: translateY(0);
 }
 
 .textblock9{
@@ -186,13 +177,13 @@ span{
     top: 650px;
     left: 15%;
     opacity: 0;
-    transform: translate(-50px, -50px);
-    transition: transform 0.9s ease-out, opacity 0.9s ease-out;
+    transform: scale(0.8);
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
 }
 
 .textblock9.show {
     opacity: 1;
-    transform: translate(0, 0);
+    transform: scale(1);
 }
 
 .textblock10{
@@ -200,13 +191,11 @@ span{
     top: 680px;
     left: 65%;
     opacity: 0;
-    transform: scaleX(0);
-    transition: transform 0.7s ease-out, opacity 0.7s ease-out;
+    transition: opacity 0.6s ease-out;
 }
 
 .textblock10.show {
     opacity: 1;
-    transform: scaleX(1);
 }
 
 .textblock11{
@@ -214,15 +203,14 @@ span{
     top: 700px;
     left: 40%;
     opacity: 0;
-    transform: scale(0) rotate(180deg);
-    transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.8s ease-out;
+    transform: scale(0.8);
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
 }
 
 .textblock11.show {
     opacity: 1;
-    transform: scale(1) rotate(0deg);
+    transform: scale(1);
 }
-
 .hidden {
     opacity: 0;
 }
@@ -230,8 +218,8 @@ span{
 
 .nextpagebutton {
     position: relative;
-    top: 1200px;
-    left: -950px;
+    top: 400px;
+    left: 1400px;
     opacity: 0;
     transform: scale(0);
     transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.6s ease-out;
@@ -274,10 +262,11 @@ button{
     display: flex;
     flex-direction: row;
     justify-content: left;
-    margin-top: 30px;
+    margin-top: 5ch;
     gap: 10px;
-    margin-left: 50px;
-    position: relative;
+    margin-left: 1330px;
+    position: absolute;
+
 }
 
 .button-container2{
@@ -285,9 +274,9 @@ button{
     flex-direction: row;
     justify-content: left;
     gap: 10px;
-    margin-left: 50px;
-    position: relative;
-    top: -60px;
+    margin-left: -1150px;
+    position: absolute;
+    top: 180px;
     left: 1210px;
 }
 
@@ -298,6 +287,137 @@ button:hover{
     transition: 0.3s ease-in-out;
 }
  
+/* Hamburger Button */
+.hamburger {
+    position: fixed;
+    top: 100px;
+    right: 50px;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border: 1px solid #FF9AE9;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 0;
+    transition: transform 0.3s ease;
+}
+
+.hamburger span {
+    width: 20px;
+    height: 2px;
+    background-color: #FF9AE9;
+    transition: all 0.3s ease;
+}
+
+/* Remove hover effect when hamburger is open (X state) */
+.hamburger.open:hover {
+    background-color: transparent !important;
+}
+
+.hamburger.open:hover span {
+    background-color: #FF9AE9 !important;
+}
+
+/* Keep normal hover when closed */
+.hamburger:hover {
+    background-color: #FF9AE9;
+}
+
+.hamburger:hover span {
+    background-color: #2900F5;
+}
+
+/* Animate to X when open */
+.hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Menu Panel */
+.menu-panel {
+    position: fixed;
+    top: 50px;
+    right: -350px;
+    width: 300px;
+    height: 500px;
+    background-color: #FF9AE9;
+    z-index: 1500;
+    transition: right 0.4s ease-in-out;
+    border-radius: 30px;
+}
+
+.menu-panel.open {
+    right: 0;
+}
+
+.menu-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    gap: 15px;
+}
+
+/* Keep menu buttons always visible without hover background change */
+.menu-content button {
+    background-color: transparent !important;
+    color: #2900F5 !important;
+    border-color: #2900F5;
+    width: 90px;
+    height: 90px;
+    border-radius: 100px;
+}
+
+.menu-content button:hover {
+    background-color:  #2900F5 !important;
+    color: #FF9AE9 !important;
+    border-color: #2900F5;
+  
+}
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 3em;
+    background: transparent !important;
+    border: none !important;
+    color: #2900F5 !important;
+    cursor: pointer;
+    width: auto !important;
+    height: auto !important;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    background: transparent !important;
+    color: #2900F5 !important;
+    opacity: 1 !important;
+}
+
+
+
+/* Remove old button containers */
+.button-container,
+.button-container2 {
+    display: none;
+}
+
 #pagebutton{
     background-color: #FF9AE9;
     color: #2900F5;

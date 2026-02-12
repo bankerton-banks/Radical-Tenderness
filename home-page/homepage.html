@@ -15,27 +15,63 @@
     <body style="background-color: #2900F5;">
 
         <div class="button-container">
-            <a href="../index.html"><button>home</button></a> 
-            <a href="../aboutpage/about.html"><button>about</button></a> 
+            <a href="../index.html"><button>start over</button></a> 
+            <button id="aboutBtn">about</button>
         </div>
 
-        <div class="button-container2">
-          <a href="../textpage1/textpage1.html"><button>.✦ ݁˖</button></a> 
-          <a href="../textpage2/textpage.html"><button>⋆˚꩜｡</button></a>
-          <a href="../textpage3/textpage3.html"><button>₊˚⊹♡</button></a>
+    <div class="side-panel" id="sidePanel">
+        <button class="close-btn" id="closeBtn">&times;</button>
+        <div class="panel-content">
+            <h2>About</h2>
+            <p>
+                Invitation to Radical Tenderness, by Dani
+                d’Emilia and Vanessa Andreotti (2018)
+                registers thoughts expressed by the
+                collective ‘Gesturing Towards Decolonial
+                Futures’ and is part of the broader
+                artistic-pedagogic collaboration ‘Engaged
+                dis-identifications’, which explores the
+                workings of non-notional possibilities
+                of co-existence through performative
+                practices. With the support of Musagetes
+                Foundation, this collaboration attempts to
+                translate post-representational modes of
+                engagement into embodied experiments
+                that reconfigure the connections between
+                reason, affect and relationality. More info
+                about Gesturing Towards Decolonial
+                Futures can be accessed in the following
+                link: https://decolonialfutures.net
+                <br>
+                <br>
+                     Radical Tenderness is a term that Dani first
+                encountered through her collaboration with
+                the transnational performance collective
+                La Pocha Nostra, with whom she worked
+                between 2008-2016. Since then she has
+                been engaged in a deeper quest to explore
+                what radical tenderness, as a concept-prac-
+                tice-affect means and does at a personal,
+                political and existential level. A first radical
+                tenderness manifesto was written by Dani
+                in collaboration with Daniel B.Chavez in 2015
+                and can be accessed in the following link:
+                https://danidemilia.com/radical-tenderness
+            </p>
         </div>
+    </div>
+
+        <div class="button-container2">
+  <a href="../textpage1/textpage1.html"><button class="large-btn">.✦ ݁˖</button></a> 
+  <a href="../textpage2/textpage.html"><button class="large-btn">⋆˚꩜｡</button></a>
+  <a href="../textpage3/textpage3.html"><button class="large-btn">₊˚⊹♡</button></a>
+</div>
 
         <div class="parent1 hover">
                <p class="child1"> Radical Tenderness Is </p> 
             </div>
          
-            <div class="parent3 hover">
-                <p class="child1"> Radical Tenderness Is </p>
-            </div>
-
-             <div class="parent2 hover">
-                <p class="child1"> Radical Tenderness Is </p>
-            </div>
+       
         
         
         <p class="fish hover">𓆝 𓆟 𓆞 𓆝 𓆟</p>
@@ -151,18 +187,26 @@
             });
         }, 2000);
     }
+// Side Panel functionality
+const aboutBtn = document.getElementById('aboutBtn');
+const sidePanel = document.getElementById('sidePanel');
+const closeBtn = document.getElementById('closeBtn');
 
-      // In your switchElement function, replace the navigation setTimeout with this:
-setTimeout(() => {
-  // Fade out the entire body
-  document.body.style.transition = 'opacity 0.5s ease-out';
-  document.body.style.opacity = '0';
-  
-  // Navigate after fade completes
-  setTimeout(() => {
-    window.location.href = 'home-page/homepage.html';
-  }, 500);
-}, 1500);
+aboutBtn.addEventListener('click', function(e) {
+    e.stopPropagation(); // Prevent the click from bubbling up
+    sidePanel.classList.toggle('open'); // Toggle instead of just add
+});
+
+closeBtn.addEventListener('click', function() {
+    sidePanel.classList.remove('open');
+});
+
+// Optional: Close panel when clicking outside of it
+document.addEventListener('click', function(event) {
+    if (!sidePanel.contains(event.target) && !aboutBtn.contains(event.target)) {
+        sidePanel.classList.remove('open');
+    }
+});
 </script>
     </body>
 </html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="section2.css">
+    </head>
+       <body style="background-color: #2900F5;">
+
+<button class="hamburger" id="hamburgerBtn">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
+<div class="menu-panel" id="menuPanel">
+    <button class="close-btn" id="closeBtn">&times;</button>
+    <div class="menu-content">
+        <a href="../index.html"><button>home</button></a>
+        <a href="../textpage1/textpage1.html"><button>.✦ ݁˖</button></a> 
+        <a href="../textpage2/textpage.html"><button>⋆˚꩜｡</button></a>
+        <a href="../textpage3/textpage3.html"><button>₊˚⊹♡</button></a>
+    </div>
+</div>
+
+<h1> Radical <br> Tenderness <br>Is </h1>
+    <h4> section 2</h4>
+    <button id="nextBtn">start</button>
+    <button id="deleteBtn">stop</button>
+        
+        <script>
+
+    nextBtn.addEventListener('click', () => {
+        if (clickCount < 12) {
+            clickCount++;
+            textblocks[clickCount].classList.add('show');
+            
+            // Auto-scroll when textblock6 appears
+            if (clickCount === 6) {
+                window.scrollTo({
+                    top: 400,
+                    behavior: 'smooth'
+                });
+            }
+            // Auto-scroll when textblock10 appears
+            if (clickCount === 10) {
+                window.scrollTo({
+                    top: 1000,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    });
+
+    deleteBtn.addEventListener('click', () => {
+        if (clickCount > 0) {
+            textblocks[clickCount].classList.remove('show');
+            clickCount--;
+        }
+    });
+
+    // ========== TRIPLE-CLICK COLOR ANIMATION ==========
+    const backgroundColors = ['#990559', '#165C1C', '#F08DFF', '#FAC8C9', '#E74447', '#5D2800'];
+    const textColors = ['#52A7E7', '#FFB055', '#0D409F', '#115B80', '#E4F2FF', '#B5FFA4'];
+
+    let tripleClickCount = 0;
+    let clickTimer = null;
+    let animationInterval = null;
+    let animationTimeout = null;
+    let isAnimating = false;
+    let currentBgColor = '#2900F5';
+    let currentTextColor = '#FF9AE9';
+
+    const body = document.body;
+    const allText = document.querySelectorAll('h1, h4, p, span, button');
+    const buttons = document.querySelectorAll('button');
+
+    buttons.forEach(btn => {
+        btn.addEventListener('mouseenter', function() {
+            this.style.backgroundColor = currentTextColor;
+            this.style.color = currentBgColor;
+        });
+        
+        btn.addEventListener('mouseleave', function() {
+            if (!this.id || this.id !== 'pagebutton') {
+                this.style.backgroundColor = 'transparent';
+                this.style.color = currentTextColor;
+            }
+        });
+    });
+
+    document.addEventListener('click', function(e) {
+        if (e.target.id === 'nextBtn' || e.target.id === 'deleteBtn') {
+            return;
+        }
+        
+        if (isAnimating) {
+            clearInterval(animationInterval);
+            clearTimeout(animationTimeout);
+            isAnimating = false;
+            tripleClickCount = 0;
+            return;
+        }
+        
+        tripleClickCount++;
+        
+        if (clickTimer) {
+            clearTimeout(clickTimer);
+        }
+        
+        if (tripleClickCount === 3) {
+            startColorAnimation();
+            tripleClickCount = 0;
+        } else {
+            clickTimer = setTimeout(() => {
+                tripleClickCount = 0;
+            }, 500);
+        }
+    });
+
+    function startColorAnimation() {
+        if (animationInterval) {
+            clearInterval(animationInterval);
+        }
+        if (animationTimeout) {
+            clearTimeout(animationTimeout);
+        }
+        
+        isAnimating = true;
+        
+        animationInterval = setInterval(() => {
+            const randomBgColor = backgroundColors[Math.floor(Math.random() * backgroundColors.length)];
+            const randomTextColor = textColors[Math.floor(Math.random() * textColors.length)];
+            
+            currentBgColor = randomBgColor;
+            currentTextColor = randomTextColor;
+            
+            body.style.backgroundColor = randomBgColor;
+            
+            allText.forEach(element => {
+                element.style.color = randomTextColor;
+            });
+            
+            document.querySelectorAll('button').forEach(btn => {
+                btn.style.borderColor = randomTextColor;
+                if (btn.id === 'pagebutton') {
+                    btn.style.backgroundColor = randomTextColor;
+                    btn.style.color = randomBgColor;
+                }
+            });
+        }, 200);
+        
+        animationTimeout = setTimeout(() => {
+            clearInterval(animationInterval);
+            isAnimating = false;
+            
+            currentBgColor = '#2900F5';
+            currentTextColor = '#FF9AE9';
+            
+            body.style.backgroundColor = '#2900F5';
+            allText.forEach(element => {
+                element.style.color = '#FF9AE9';
+            });
+            document.querySelectorAll('button').forEach(btn => {
+                btn.style.borderColor = '#FF9AE9';
+                if (btn.id === 'pagebutton') {
+                    btn.style.backgroundColor = '#FF9AE9';
+                    btn.style.color = '#2900F5';
+                }
+            });
+        }, 2000);
+    }
+
+// ========== HAMBURGER MENU ==========
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const menuPanel = document.getElementById('menuPanel');
+const closeBtn = document.getElementById('closeBtn');
+
+console.log('Hamburger:', hamburgerBtn);
+console.log('Menu Panel:', menuPanel);
+console.log('Close button:', closeBtn);
+
+if (hamburgerBtn && menuPanel) {
+    // Hamburger button click
+    hamburgerBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        console.log('Hamburger clicked!');
+        this.classList.toggle('open');
+        menuPanel.classList.toggle('open');
+    });
+    
+    // Close button click
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            console.log('Close button clicked!');
+            menuPanel.classList.remove('open');
+            hamburgerBtn.classList.remove('open');
+        });
+    } else {
+        console.error('Close button not found!');
+    }
+    
+    // Close when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!menuPanel.contains(event.target) && !hamburgerBtn.contains(event.target)) {
+            menuPanel.classList.remove('open');
+            hamburgerBtn.classList.remove('open');
+        }
+    });
+    
+    // Prevent menu clicks from closing
+    menuPanel.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+}
+        </script>
+    </body>
+</html>
