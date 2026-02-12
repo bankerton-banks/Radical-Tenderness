@@ -133,8 +133,15 @@ a:has(.image2.active) {
         margin-top: 300px;
         margin-left: 0;
     }
-
     .image2 {
-        width: 500px;
+        width: 95vw; /* Use viewport width instead of fixed pixels */
+        max-width: 95vw; /* Ensure it doesn't exceed viewport */
+        height: auto; /* Maintain aspect ratio */
     }
+    
+    .image2.active {
+        width: 95vw;
+        max-width: 95vw;
+    }
+
 }
