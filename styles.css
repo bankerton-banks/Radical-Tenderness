@@ -135,6 +135,6 @@ a:has(.image2.active) {
     }
 
     .image2 {
-        width: 300px;
+        width: 500px;
     }
 }
