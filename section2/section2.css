@@ -16,13 +16,13 @@
 
 h1{
     font-family: Klaus ;
-    font-size: 7em;
+    font-size: 3em;
     font-weight: 100;
     color: #FF9AE9;
     margin-left: 50px;
     margin-top: 50px;
     letter-spacing: -0.08em;
-    line-height: 70pt;
+    line-height: 30pt;
 }
 
 h4{
@@ -46,14 +46,42 @@ html {
     height: 100%;
 }
 
-p{
+.indent{
+    margin-left: 20px;
+}
+
+p {
     font-family: klausthin;
-    font-size: 1.3em;
-    line-height:.8em;
+    font-size: 10.5em;
+    line-height: 1em;
     color: #FF9AE9;
+    letter-spacing: -0.08em;
     padding: 20px;
-    top: 200px;
-    left: 50px;
+    position: relative; 
+    margin: 50px;
+    padding-bottom: 100x;
+}
+
+span{
+    font-family: klaus;
+    font-weight: 300;
+}
+
+.parentcontainer {
+    position: fixed;
+    left: 60%;
+    transform: translateX(-50%);
+    top: 100vh;
+    width: max-content;
+    z-index: 1;
+    gap: 350px;
+}
+
+#nextBtn,
+#deleteBtn {
+    position: fixed;
+    right: 50px;
+    z-index: 9999;
 }
 
 
@@ -130,7 +158,6 @@ button:hover{
     transition: all 0.3s ease;
 }
 
-/* Remove hover effect when hamburger is open (X state) */
 .hamburger.open:hover {
     background-color: transparent !important;
 }
@@ -139,7 +166,7 @@ button:hover{
     background-color: #FF9AE9 !important;
 }
 
-/* Keep normal hover when closed */
+
 .hamburger:hover {
     background-color: #FF9AE9;
 }
@@ -148,7 +175,6 @@ button:hover{
     background-color: #2900F5;
 }
 
-/* Animate to X when open */
 .hamburger.open span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
@@ -161,12 +187,12 @@ button:hover{
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Menu Panel */
 .menu-panel {
     position: fixed;
     top: 50px;
     right: -350px;
     width: 300px;
+    margin-right: 50px;
     height: 500px;
     background-color: #FF9AE9;
     z-index: 1500;
@@ -187,7 +213,7 @@ button:hover{
     gap: 15px;
 }
 
-/* Keep menu buttons always visible without hover background change */
+
 .menu-content button {
     background-color: transparent !important;
     color: #2900F5 !important;
@@ -227,7 +253,7 @@ button:hover{
 
 
 
-/* Remove old button containers */
+
 .button-container,
 .button-container2 {
     display: none;
@@ -267,3 +293,124 @@ a{
     right: 50px;
     top: 330px;
 }
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+        margin-left: 20px;
+        margin-top: 30px;
+        letter-spacing: -0.06em;
+        line-height: 25pt;
+    }
+    
+    h4 {
+        font-size: 0.9em;
+        margin-left: 25px;
+        margin-top: 5px;
+    }
+    
+    p {
+        font-size: 3em;
+        line-height: 0.9em;
+        padding: 15px;
+        margin: 20px;
+        letter-spacing: -0.06em;
+    }
+    
+    span {
+        font-size: 1em;
+    }
+    
+    .parentcontainer {
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 200px;
+    }
+    
+    /* Position Next/Delete buttons in upper right */
+    #nextBtn {
+        position: fixed;
+        right: 15px;
+        top: 400px;
+        width: 50px;
+        height: 50px;
+        font-size: 0.6em;
+    }
+    
+    #deleteBtn {
+        position: fixed;
+        right: 15px;
+        top: 330px;
+        width: 50px;
+        height: 50px;
+        font-size: 0.6em;
+    }
+    
+ 
+    .hamburger {
+        top: 40px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .hamburger span {
+        width: 16px;
+    }
+    
+    .menu-panel {
+        width: 200px;
+        height: 400px;
+        margin-right: 15px;
+    }
+    
+    .menu-content button {
+        width: 70px;
+        height: 70px;
+        font-size: 0.8em;
+    }
+    
+    button {
+        background-color: #FF9AE9;
+        color: #2900F5;
+        border: 1px solid #FF9AE9;
+    }
+    
+    button:hover {
+        background-color: #FF9AE9 !important;
+        color: #2900F5 !important;
+        border: 1px solid #FF9AE9 !important;
+        transition: none !important;
+    }
+    
+
+    .hamburger {
+        background-color: transparent !important;
+        border-color: #FF9AE9 !important;
+    }
+    
+    .hamburger:hover {
+        background-color: transparent !important;
+    }
+    
+    .hamburger span {
+        background-color: #FF9AE9 !important;
+    }
+    
+
+    .menu-content button {
+        background-color: transparent !important;
+        color: #2900F5 !important;
+        border-color: #2900F5 !important;
+    }
+    
+    .menu-content button:hover {
+        background-color: transparent !important;
+        color: #2900F5 !important;
+    }
+    
+    .close-btn:hover {
+        background-color: transparent !important;
+    }
+}
+

@@ -23,48 +23,176 @@
 <div class="menu-panel" id="menuPanel">
     <button class="close-btn" id="closeBtn">&times;</button>
     <div class="menu-content">
-        <a href="../index.html"><button>home</button></a>
+        <a href="../home-page/homepage.html"><button>home</button></a>
         <a href="../textpage1/textpage1.html"><button>.✦ ݁˖</button></a> 
         <a href="../textpage2/textpage.html"><button>⋆˚꩜｡</button></a>
         <a href="../textpage3/textpage3.html"><button>₊˚⊹♡</button></a>
     </div>
 </div>
 
-<h1> Radical <br> Tenderness <br>Is </h1>
+<h1> Radical <br> Tenderness : <br></h1>
     <h4> section 2</h4>
     <button id="nextBtn">start</button>
     <button id="deleteBtn">stop</button>
-        
+    <div class="parentcontainer">
+    <div class="textblock1 ">
+        <p>
+            <span>Is</span>
+       <br> engendering <br>
+        new<br>
+        forms of  <br>
+        co-existence<br>
+        <br>
+        </p>
+    </div>
+
+    <div class="textblock2 ">
+        <p>
+        <span>It is </span>
+        engaging<br>
+        through artful<br>
+        participation<br>
+          <br>
+        </p>
+    </div>
+
+     <div class="textblock3 ">
+        <p>
+        <span>It is </span>
+        <br>respecting<br>
+        different<br>
+        medicines<br>
+        and working<br>
+        through<br>
+        affinities and<br>
+        differences<br>
+          <br>
+        </p>
+    </div>
+
+       <div class="textblock4 ">
+        <p>
+        <span>It is </span>
+         tuning in <br>
+         with, not just<br>
+         empathizing<br>
+         with<br>
+           <br>
+        </p>
+    </div>
+
+        <div class="textblock5 ">
+        <p>
+        <span>It is </span>
+        <br>witnessing <br>
+        ourselves <br>
+        and each<br>
+        other moving<br>
+        between<br>
+        our comfort,<br>
+        stretch and<br>
+        panic zones<br>
+          <br>
+        </p>
+    </div>
+    <div class="textblock6 hidden">
+            <p>
+            <span>It is </span>
+            knowing <br> that <br>
+            people can <br>
+            begin to heal <br>
+            when they <br>
+            are heard <br>
+              <br>
+            </p>
+        </div>
+
+     <div class="textblock7 ">
+        <p>
+        <span>It is </span>
+        breaking <br>
+        the cycle<br>
+        in which<br>
+        people with<br>
+        trauma are<br>
+        demanded<br>
+        to share their<br>
+        stories in<br>
+        order to be<br>
+        validated<br>
+          <br>
+        </p>
+    </div>
+
+
+     <div class="textblock8 ">
+        <p>
+        <span>It is </span>
+        ‘mandar <br>
+        obedeciendo’,<br>
+        as the<br>
+        zapatistas<br>
+        say<br>
+          <br>
+        </p>
+        </div>
+
+     <div class="textblock9 ">
+        <p>
+        <span>It is </span>
+        relating <br>
+        beyond<br>
+        identity,<br>
+        knowledge<br>
+        and under-<br>
+        standing<br>
+          <br>
+        </p>
+    </div>
+
+     <div class="textblock10 ">
+        <p>
+        <span>It is </span>
+        dissolving<br>
+        the limits<br>
+        and weight<br>
+        of our bodies<br>
+        by allowing<br>
+        others to<br>
+        move through,<br>
+        with and<br>
+        for us<br>
+          <br>
+        </p>
+    </div>
+    </div>
+
         <script>
+const nextBtn = document.getElementById("nextBtn");
+const deleteBtn = document.getElementById("deleteBtn");
+const parentContainer = document.querySelector(".parentcontainer");
 
-    nextBtn.addEventListener('click', () => {
-        if (clickCount < 12) {
-            clickCount++;
-            textblocks[clickCount].classList.add('show');
-            
-            // Auto-scroll when textblock6 appears
-            if (clickCount === 6) {
-                window.scrollTo({
-                    top: 400,
-                    behavior: 'smooth'
-                });
-            }
-            // Auto-scroll when textblock10 appears
-            if (clickCount === 10) {
-                window.scrollTo({
-                    top: 1000,
-                    behavior: 'smooth'
-                });
-            }
-        }
-    });
+let positionY = window.innerHeight; // start below screen
+let animationId = null;
+let speed = 2;
 
-    deleteBtn.addEventListener('click', () => {
-        if (clickCount > 0) {
-            textblocks[clickCount].classList.remove('show');
-            clickCount--;
-        }
-    });
+function moveUp() {
+    positionY -= speed;
+    parentContainer.style.top = positionY + "px";
+    animationId = requestAnimationFrame(moveUp);
+}
+
+nextBtn.addEventListener("click", function () {
+    if (!animationId) {
+        moveUp();
+    }
+});
+
+deleteBtn.addEventListener("click", function () {
+    cancelAnimationFrame(animationId);
+    animationId = null;
+});
+
 
     // ========== TRIPLE-CLICK COLOR ANIMATION ==========
     const backgroundColors = ['#990559', '#165C1C', '#F08DFF', '#FAC8C9', '#E74447', '#5D2800'];

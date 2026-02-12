@@ -287,7 +287,7 @@ button:hover{
     transition: 0.3s ease-in-out;
 }
  
-/* Hamburger Button */
+
 .hamburger {
     position: fixed;
     top: 100px;
@@ -315,7 +315,6 @@ button:hover{
     transition: all 0.3s ease;
 }
 
-/* Remove hover effect when hamburger is open (X state) */
 .hamburger.open:hover {
     background-color: transparent !important;
 }
@@ -324,7 +323,6 @@ button:hover{
     background-color: #FF9AE9 !important;
 }
 
-/* Keep normal hover when closed */
 .hamburger:hover {
     background-color: #FF9AE9;
 }
@@ -333,7 +331,6 @@ button:hover{
     background-color: #2900F5;
 }
 
-/* Animate to X when open */
 .hamburger.open span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
@@ -346,7 +343,6 @@ button:hover{
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Menu Panel */
 .menu-panel {
     position: fixed;
     top: 50px;
@@ -357,6 +353,7 @@ button:hover{
     z-index: 1500;
     transition: right 0.4s ease-in-out;
     border-radius: 30px;
+    margin-right: 50px;
 }
 
 .menu-panel.open {
@@ -372,7 +369,6 @@ button:hover{
     gap: 15px;
 }
 
-/* Keep menu buttons always visible without hover background change */
 .menu-content button {
     background-color: transparent !important;
     color: #2900F5 !important;
@@ -411,8 +407,6 @@ button:hover{
 }
 
 
-
-/* Remove old button containers */
 .button-container,
 .button-container2 {
     display: none;
@@ -425,4 +419,173 @@ button:hover{
 
 a{
     text-decoration: none;
+}
+
+
+@media screen {
+    
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 3.5em;
+        margin-left: 20px;
+        margin-top: 30px;
+        letter-spacing: -0.06em;
+        line-height: 40pt;
+    }
+    
+    h4 {
+        font-size: 0.9em;
+        margin-left: 25px;
+        margin-top: -10px;
+    }
+    
+    p {
+        font-size: .7em;
+        line-height: 0.9em;
+        padding: 15px;
+    }
+    
+    span {
+        font-size: 0.9em;
+    }
+    
+    #nextBtn {
+        position: fixed;
+        right: 15px;
+        top: 140px;
+        width: 50px;
+        height: 50px;
+        font-size: 0.6em;
+    }
+    
+    #deleteBtn {
+        position: fixed;
+        right: 15px;
+        top: 200px;
+        width: 50px;
+        height: 50px;
+        font-size: 0.6em;
+    }
+    
+    .hamburger {
+        top: 40px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .hamburger span {
+        width: 16px;
+    }
+    
+    .menu-panel {
+        width: 200px;
+        height: 400px;
+        margin-right: 30px;
+    }
+    
+    .menu-content button {
+        width: 70px;
+        height: 70px;
+        font-size: 0.8em;
+    }
+    
+    /* Reposition all text blocks for mobile */
+    .textblock1 {
+        top: 150px;
+        left: 5%;
+    }
+    
+    .textblock2 {
+        top: 220px;
+        left: 50%;
+    }
+    
+    .textblock3 {
+        top: 360px;
+        left: 55%;
+    }
+    
+    .textblock4 {
+        top: 320px;
+        left: 10%;
+    }
+    
+    .textblock5 {
+        top: 240px;
+        left: 70%;
+    }
+    
+    .textblock6 {
+        top: 430px;
+        left: 5%;
+    }
+    
+    .textblock7 {
+        top: 450px;
+        left: 70%;
+    }
+    
+    .textblock8 {
+        top: 380px;
+        left: 38%;
+    }
+    
+    .textblock9 {
+        top: 540px;
+        left: 10%;
+    }
+    
+    .textblock10 {
+        top: 580px;
+        left: 55%;
+    }
+    
+    .textblock11 {
+        top: 600px;
+        left: 25%;
+    }
+    
+    .nextpagebutton {
+        top: 200px;
+        left: 86.5%;
+        transform: translateX(-50%) scale(0);
+    }
+    
+    .nextpagebutton.show {
+        transform: translateX(-50%) scale(1);
+    }
+    
+    .nextpagebutton button {
+        width: 50px;
+        height: 50px;
+        font-size: 0.7em;
+    }
+    
+    button {
+        background-color: #FF9AE9;
+        color: #2900F5;
+        border: 1px solid #FF9AE9;
+    }
+    
+    button:hover {
+        background-color: #FF9AE9 !important;
+        color: #2900F5 !important;
+        border: 1px solid #FF9AE9 !important;
+        transition: none !important;
+    }
+    
+
+    .menu-content button {
+        background-color: transparent !important;
+        color: #2900F5 !important;
+        border-color: #2900F5 !important;
+    }
+    
+    .menu-content button:hover {
+        background-color: transparent !important;
+        color: #2900F5 !important;
+    }
 }
