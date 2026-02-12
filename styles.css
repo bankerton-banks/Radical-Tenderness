@@ -114,17 +114,17 @@ a:has(.image2.active) {
     overflow-y: hidden ;
   }
     .text1 {
-        font-size: 5em;
-        top: 50px;
+        font-size: 3em;
+        top: 30px;
         left: 40px;
-        line-height: 50pt;
-        letter-spacing: -4pt;
+        line-height: 30pt;
+        letter-spacing: -2pt;
     }
     
        
     .text2 {
         font-size: 0.8em;
-        top: 200px;
+        top: 150px;
         left: 40px;
     }
 
@@ -135,6 +135,6 @@ a:has(.image2.active) {
     }
 
     .image2 {
-        width: 100%;
+        width: 300px;
     }
 }

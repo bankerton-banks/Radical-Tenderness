@@ -161,8 +161,8 @@ a{
 
 button{
     display: flex;
-    direction:  column;  justify-content: center;  /* centers horizontally */
-    align-items: center;      /* centers vertically */
+    direction:  column;  justify-content: center; 
+    align-items: center;      
     font-family: klausthin;
     font-size: 0.7em;
     color: #FF9AE9;
@@ -183,8 +183,8 @@ button{
 
 .button2{
     display: flex;
-    direction:  column;  justify-content: center;  /* centers horizontally */
-    align-items: center;      /* centers vertically */
+    direction:  column;  justify-content: center; 
+    align-items: center;      
     font-family: klausthin;
     font-size: 0.7em;
     color: #FF9AE9;
@@ -277,8 +277,8 @@ body{
     }
     
     .child1 {
-        font-size: 4em;
-        letter-spacing: -4pt;
+        font-size: 3em;
+        letter-spacing: -2pt;
         line-height: 0.8em;
         margin-left: 20px;
         margin-top: -30px;
@@ -396,8 +396,8 @@ body{
 
 .button2{
     display: flex;
-    direction:  column;  justify-content: center;  /* centers horizontally */
-    align-items: center;      /* centers vertically */
+    direction:  column;  justify-content: center; 
+    align-items: center;      
     font-family: klausthin;
     font-size: 0.7em;
     color: #2900F5;
@@ -442,7 +442,7 @@ body{
     margin-left: 55px;
     margin-right: 50px;
     position: absolute;
-    left: 120px;
+    left: 90px;
     margin-top: 150px;
     letter-spacing: -10pt;
 
