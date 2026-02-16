@@ -114,27 +114,29 @@ a:has(.image2.active) {
     overflow-y: hidden !important;
   }
     .text1 {
-        font-size: 4.5em;
+        font-size: 5em;
         top: 30px;
         left: 40px;
-        line-height: 45pt;
+        line-height: 50pt;
         letter-spacing: -2pt;
     }
     
        
     .text2 {
         font-size: 0.8em;
-        top: 220px;
+        top: 250px;
         left: 40px;
     }
 
     .image1 {
-        width: 400px !important;
+        width: 500px !important;
        margin: auto;
+       margin-left: -50px;
        margin-top: 300px;
+       overflow: hidden;
     }
     .image2 {
-        width: 95vw; /* Use viewport width instead of fixed pixels */
+        width: 100vw; /* Use viewport width instead of fixed pixels */
         max-width: 95vw; /* Ensure it doesn't exceed viewport */
         height: auto; /* Maintain aspect ratio */
     }
