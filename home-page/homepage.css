@@ -17,10 +17,17 @@
     src: url(fonts/MNKYKlausTRIAL-Thin.otf);
 }
 
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
 body {
     opacity: 0;
     animation: fadeIn 1s ease-in forwards;
     overflow: hidden;
+    height: 100%;
+    width: 100%;
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -63,7 +70,7 @@ a {
     left: 670px;
     position: absolute;
     white-space: nowrap;
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 .parent3 {
@@ -87,7 +94,6 @@ a {
     letter-spacing: -5pt;
     margin-left: 50px;
     margin-top: -30px;
-    flex-direction: column;
 }
 
 .child2 {
@@ -139,6 +145,7 @@ p {
     top: 0;
     right: -800px;
     width: 600px;
+    border-radius: 100px;
     height: 100vh;
     background-color: #FF9AE9;
     transition: right 0.4s ease-in-out;
@@ -152,15 +159,15 @@ p {
 
 .close-btn {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 50px;
+    right: 50px;
     font-size: 2em;
     background: transparent;
     border: none;
     color: #2900F5;
     cursor: pointer;
-    width: auto;
-    height: auto;
+    width: 50px;
+    height: 50px;
     padding: 0;
     margin: 0;
 }
@@ -178,10 +185,9 @@ p {
     font-family: klausthin;
     font-size: 1.2em;
     line-height: 1.2em;
-    margin: 0;
+    margin: 0 50px;
     max-width: 500px;
     color: #2900F5;
-    margin-left: 50px;
 }
 
 /* ============================================
@@ -189,19 +195,18 @@ p {
    ============================================ */
 button {
     display: flex;
-    direction: column;
     justify-content: center;
     align-items: center;
     font-family: klausthin;
-    font-size: .8em !important;
+    font-size: 0.8em !important;
     color: #FF9AE9;
     background-color: transparent;
     border: 1px solid #FF9AE9;
     border-radius: 100%;
     padding: 10px 20px;
-    margin-left: 0px;
     width: 70px !important;
     height: 70px !important;
+    cursor: pointer;
 }
 
 button:hover {
@@ -219,18 +224,10 @@ button:hover {
 }
 
 .button2 {
-    display: flex;
-    direction: row;
-    justify-content: center;
-    align-items: center;
-    font-family: klausthin;
     font-size: 0.7em;
     color: #2900F5;
     background-color: #FF9AE9;
     border: 1px solid #FF9AE9;
-    border-radius: 100%;
-    padding: 10px 20px;
-    margin-left: 0px;
     width: 200px;
     height: 60px;
 }
@@ -243,14 +240,13 @@ button:hover {
     position: fixed;
     top: 90px;
     right: 50px;
-    left: auto;
-    margin: 0;
+    z-index: 100;
 }
 
 .button-container button {
-    width: 50px;
-    height: 50px;
-    font-size: 0.6em;
+    width: 70px !important;
+    height: 70px !important;
+    font-size: 0.8em !important;
     background-color: #FF9AE9;
     color: #2900F5;
 }
@@ -258,14 +254,12 @@ button:hover {
 .button-container2 {
     display: flex;
     flex-direction: row;
-    justify-content: right;
+    justify-content: center;
+    align-items: center;
     gap: 50px;
-    margin-left: 0px;
-    margin-right: 50px;
     position: absolute;
     left: 90px;
     margin-top: 300px;
-    letter-spacing: -10pt;
 }
 
 /* ============================================
@@ -281,7 +275,7 @@ button:hover {
     .panel-content p {
         font-size: 1em;
         line-height: 1.2em;
-        margin: 0;
+        margin: 0 20px;
         max-width: 100%;
     }
 
@@ -311,12 +305,12 @@ button:hover {
     }
 
     button {
-        font-size: 0.7em;
-        color: #FF9AE9;
-        background-color: #2900F5;
+        font-size: 0.7em !important;
+        color: #2900F5;
+        background-color: #FF9AE9;
         border: 1px solid #FF9AE9;
-        width: 50px;
-        height: 50px;
+        width: 40px !important;
+        height: 40px !important;
     }
 
     button:hover {
@@ -357,21 +351,17 @@ button:hover {
     }
 
     .button-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        gap: 10px;
         position: absolute;
         top: 150px;
         left: 250px;
         right: auto;
-        margin-right: 20px;
+        gap: 10px;
     }
 
     .button-container button {
-        width: 50px;
-        height: 50px;
-        font-size: 0.5em;
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 0.6em !important;
         background-color: #2900F5 !important;
         color: #FF9AE9 !important;
         border: 1px solid #FF9AE9 !important;
@@ -397,10 +387,8 @@ button:hover {
     }
 
     p {
-        font-family: klaus;
-        font-size: 3em;
-        color: #FF9AE9;
-        margin-top: 500px;
-        margin-left: 50px;
+        font-size: 2.5em;
+        margin-top: 400px;
+        margin-left: 20px;
     }
 }

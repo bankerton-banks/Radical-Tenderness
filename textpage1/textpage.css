@@ -14,7 +14,7 @@
     src: url(../fonts/MNKYKlausTRIAL-Thin.otf);
 }
 
-h1{
+.desktop{
     font-family: Klaus ;
     font-size: 7em;
     font-weight: 100;
@@ -22,7 +22,7 @@ h1{
     margin-left: 50px;
     margin-top: 50px;
     letter-spacing: -0.08em;
-    line-height: 100pt;
+    line-height: 70pt;
 }
 
 h4{
@@ -30,7 +30,7 @@ h4{
     font-size: 1em;
     font-weight: 100;
     color:  #FF9AE9;
-    margin-top: -20px;
+    margin-top: 0px;
     margin-left: 60px;
     line-height: 35pt;
 }
@@ -350,7 +350,7 @@ button:hover{
     width: 300px;
     height: 500px;
     background-color: #FF9AE9;
-    z-index: 1500;
+    z-index: 3000;
     transition: right 0.4s ease-in-out;
     border-radius: 30px;
     margin-right: 50px;
@@ -422,11 +422,18 @@ a{
 }
 
 
-@media screen {
-    
+.mobile{
+    display: none;
 }
 
+
 @media screen and (max-width: 768px) {
+    html, body {
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+    }
+
     h1 {
         font-size: 3em;
         margin-left: 20px;
@@ -434,10 +441,9 @@ a{
         letter-spacing: -0.06em;
         line-height: 30pt;
     }
-    
-    body{
-        overflow-x: hidden;
-        overflow-y: hidden ;
+
+    .desktop{
+        display: none;
     }
 
     h4 {
@@ -456,29 +462,27 @@ a{
         font-size: 0.9em;
     }
     
-    #nextBtn {
+    /* All buttons aligned on right side */
+    #nextBtn,
+    #deleteBtn,
+    .hamburger {
         position: fixed;
-        right: 220px;
-        top: 240px;
-        width: 50px;
-        height: 50px;
-        font-size: 0.6em;
-    }
-    
-    #deleteBtn {
-        position: fixed;
-        right: 220px;
-        top: 300px;
+        right: 20px;
         width: 50px;
         height: 50px;
         font-size: 0.6em;
     }
     
     .hamburger {
-        top: 150px;
-        right: 220px;
-        width: 50px;
-        height: 50px;
+        top: 170px;
+    }
+    
+    #nextBtn {
+        top: 250px;
+    }
+    
+    #deleteBtn {
+        top: 310px;
     }
     
     .hamburger span {
@@ -510,7 +514,7 @@ a{
     
     .textblock3 {
         top: 360px;
-        left: 55%;
+        left: 60%;
     }
     
     .textblock4 {
@@ -554,19 +558,15 @@ a{
     }
     
     .nextpagebutton {
-        top: 200px;
-        left: 50%;
+        top: 600px;
+        left: 45%;
+        height: 30px;
+        width: 30px;
         transform: translateX(-50%) scale(0);
     }
     
     .nextpagebutton.show {
         transform: translateX(-50%) scale(1);
-    }
-    
-    .nextpagebutton button {
-        width: 50px;
-        height: 50px;
-        font-size: 0.7em;
     }
     
     button {
@@ -583,28 +583,26 @@ a{
     }
 
     .close-btn {
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    font-size: 3em;
-    background: transparent !important;
-    border: none !important;
-    color: #2900F5 !important;
-    cursor: pointer;
-    width: auto !important;
-    height: auto !important;
-    padding: 0;
-    margin: 0;
-    line-height: 1;
-    width: 10px;
-}
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        font-size: 3em;
+        background: transparent !important;
+        border: none !important;
+        color: #2900F5 !important;
+        cursor: pointer;
+        width: auto !important;
+        height: auto !important;
+        padding: 0;
+        margin: 0;
+        line-height: 1;
+    }
 
-.close-btn:hover {
-    background: transparent !important;
-    color: #2900F5 !important;
-    opacity: 1 !important;
-}
-    
+    .close-btn:hover {
+        background: transparent !important;
+        color: #2900F5 !important;
+        opacity: 1 !important;
+    }
 
     .menu-content button {
         background-color: transparent !important;
@@ -615,10 +613,5 @@ a{
     .menu-content button:hover {
         background-color: transparent !important;
         color: #2900F5 !important;
-    }
-
-    body{
-        overflow-x: hidden;
-            overflow-y: hidden ;
     }
 }

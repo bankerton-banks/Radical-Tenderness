@@ -9,9 +9,15 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body style="background-color:#2900F5">
-       <div>
-  <p class="text1" id="text1">You've been <br> invited</p>
+
+<div class="text1" id="text1"> <p> You've been <br> invited</p></div>
+
+<div class="text3" id="text3">
+  <div class="word1"> You've </div>
+  <div class="word2"> been </div> 
+  <div class="word3"> Invited </div>
 </div>
+
 <div class="text2" id="text2">
   <p>click on the letter to continue</p>
 </div>
@@ -20,66 +26,63 @@
   <img src="images/pink.svg" class="image1" id="element1" onclick="switchElement()">
   <img src="images/newenvelope.svg" class="image2" id="element2">
 </div>
-        
+
 <script>
 function switchElement() {
   const image1 = document.getElementById('element1');
   const image2 = document.getElementById('element2');
   const text1 = document.getElementById('text1');
   const text2 = document.getElementById('text2');
+  const text3 = document.getElementById('text3');
   
-
   const rect = image1.getBoundingClientRect();
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
   
- 
+  // Set initial position and size exactly matching image1
   image2.style.top = rect.top + 'px';
   image2.style.left = rect.left + 'px';
-  image2.style.transform = 'translate(0, 0)';
+  image2.style.width = rect.width + 'px';
+  image2.style.height = rect.height + 'px';
+  image2.style.transform = 'translate(0, 0) translate3d(0, 0, 0)';
+  image2.style.transition = 'none';
   image2.style.opacity = '1';
+  image2.style.display = 'block';
   
-
-  const startTop = rect.top;
-  const startLeft = rect.left;
+  // For mobile, set crisp rendering immediately
+  if (isMobile) {
+    image2.style.imageRendering = '-webkit-optimize-contrast';
+  }
   
-
+  // Hide all text elements
+  if (text1) text1.classList.add('hidden');
+  if (text2) text2.classList.add('hidden');
+  if (text3) text3.classList.add('hidden');
+  
+  // Hide image1
   image1.classList.add('hidden');
-  
 
-  if (text1) {
-    text1.classList.add('hidden');
-  }
-  if (text2) {
-    text2.classList.add('hidden');
-  }
+  // Use requestAnimationFrame for smoother animation
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      // On mobile, transition position/opacity separately from size
+      if (isMobile) {
+        image2.style.transition = 'top 1.2s cubic-bezier(0.4, 0, 0.2, 1), left 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 1.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1)';
+      } else {
+        image2.style.transition = 'all 1.2s cubic-bezier(0.4, 0, 0.2, 1)';
+      }
+      image2.classList.add('active');
+    });
+  });
 
+  // Fade out and redirect
   setTimeout(() => {
-    image2.classList.add('active');
-  }, 50);
+    document.body.style.transition = 'opacity 0.8s ease-out';
+    document.body.style.opacity = '0';
 
-  setTimeout(() => {
-
-    image2.classList.remove('active');
-    image2.style.top = startTop + 'px';
-    image2.style.left = startLeft + 'px';
-    image2.style.transform = 'translate(0, 0)';
-    image2.style.opacity = '0';
-    
-   
     setTimeout(() => {
       window.location.href = 'home-page/homepage.html';
-    }, 1500);
-  }, 2500);
-
- 
-setTimeout(() => {
-  
-  document.body.style.transition = 'opacity 0.5s ease-out';
-  document.body.style.opacity = '0';
-
-  setTimeout(() => {
-    window.location.href = 'home-page/homepage.html';
-  }, 500);
-}, 1500);
+    }, 800);
+  }, 2200);
 }
 </script>
 </body>
