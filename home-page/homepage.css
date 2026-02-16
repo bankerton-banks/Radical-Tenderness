@@ -1,11 +1,14 @@
-*{
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 @font-face {
-    font-family: Klaus ;
+    font-family: Klaus;
     src: url(fonts/MNKYKlausTRIAL-Light.otf);
 }
 
@@ -14,35 +17,127 @@
     src: url(fonts/MNKYKlausTRIAL-Thin.otf);
 }
 
-.parent1{
+body {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+.parent1, .parent2, .parent3, a {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+/* ============================================
+   LAYOUT CONTAINERS
+   ============================================ */
+.parent1 {
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin-top: 75px;
-
 }
 
-
-body {
-  opacity: 0;
-  animation: fadeIn 1s ease-in forwards;
-  overflow: hidden ;
+.parent2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    rotate: 90deg;
+    left: 670px;
+    position: absolute;
+    white-space: nowrap;
+    margin-top: 0px;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.parent3 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    rotate: 90deg;
+    left: 790px;
+    position: absolute;
+    white-space: nowrap;
+    margin-top: 400px;
 }
 
+/* ============================================
+   TEXT ELEMENTS
+   ============================================ */
+.child1 {
+    font-family: Klaus;
+    font-size: 7em;
+    color: #FF9AE9;
+    letter-spacing: -5pt;
+    margin-left: 50px;
+    margin-top: -30px;
+    flex-direction: column;
+}
 
+.child2 {
+    font-family: klaus;
+    font-size: 1.5em;
+    color: #FF9AE9;
+    align-self: flex-start;
+    margin-left: 50px;
+    margin-top: -30px;
+    display: none;
+}
+
+.child3 {
+    font-family: insitu;
+    font-size: 1em;
+    color: #FF9AE9;
+    align-self: flex-start;
+    margin-left: 50px;
+}
+
+.child4 {
+    font-family: insitu;
+    font-size: 1.5em;
+    color: #FF9AE9;
+    align-self: flex-start;
+    margin-left: 50px;
+    margin-top: -30px;
+}
+
+p {
+    font-family: klaus;
+    font-size: 3em;
+    color: #FF9AE9;
+    margin-top: 500px;
+    margin-left: 50px;
+}
+
+.fish {
+    left: 400px;
+    top: 600px;
+    display: none;
+}
+
+/* ============================================
+   SIDE PANEL
+   ============================================ */
 .side-panel {
     position: fixed;
     top: 0;
-    right: -800px; 
+    right: -800px;
     width: 600px;
     height: 100vh;
     background-color: #FF9AE9;
@@ -52,7 +147,7 @@ body {
 }
 
 .side-panel.open {
-    right: 0; 
+    right: 0;
 }
 
 .close-btn {
@@ -69,7 +164,6 @@ body {
     padding: 0;
     margin: 0;
 }
-
 
 .panel-content h2 {
     font-family: Klausthin;
@@ -90,184 +184,45 @@ body {
     margin-left: 50px;
 }
 
-.child1{
-    font-family: Klaus;
-    font-size: 6em;
-    color: #FF9AE9;
-    letter-spacing: -5pt;
-    margin-left: 50px;
-    margin-top: -30px;
-    flex-direction: column;
-}
-
-a{
-    text-decoration: none;
-}
-
-.child2{
-    font-family: klaus;
-    font-size: 1.5em;
-    color: #FF9AE9;
-    align-self: flex-start;
-    margin-left: 50px;
-    margin-top: -30px;
-    display: none;
-}
-
-.child3{
-    font-family: insitu;
-    font-size: 1em;
-    color: #FF9AE9;
-    align-self: flex-start;
-    margin-left: 50px;
-}
-
-
-
-.child4{
-    font-family: insitu;
-    font-size: 1.5em;
-    color: #FF9AE9;
-    align-self: flex-start;
-    margin-left: 50px;
-    margin-top: -30px;
-}
-
-.parent3{
+/* ============================================
+   BUTTONS
+   ============================================ */
+button {
     display: flex;
+    direction: column;
     justify-content: center;
-    flex-direction: column;
-    rotate: 90deg;
-    left: 790px;
-    position: absolute;
-    white-space: nowrap;
-    margin-top: 400px;
-    
-}
-
-.parent2{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-   rotate: 90deg;
-    left: 670px;
-    position: absolute;
-    white-space: nowrap;
-    margin-top: 0px;
-  
-}
-
-
-
-button{
-    display: flex;
-    direction:  column;  justify-content: center; 
-    align-items: center;      
+    align-items: center;
     font-family: klausthin;
-    font-size: 0.7em;
+    font-size: .8em !important;
     color: #FF9AE9;
     background-color: transparent;
     border: 1px solid #FF9AE9;
     border-radius: 100%;
     padding: 10px 20px;
     margin-left: 0px;
-    width: 60px;
-    height: 60px;
-}
-.large-btn {
-    width: 400px !important;  
-    height: 400px !important;  
-    font-size: 7em !important;  
-    border: 3px solid #FF9AE9 !important;
+    width: 70px !important;
+    height: 70px !important;
 }
 
-.button2{
-    display: flex;
-    direction:  column;  justify-content: center; 
-    align-items: center;      
-    font-family: klausthin;
-    font-size: 0.7em;
-    color: #FF9AE9;
-    background-color: transparent;
-    border: 1px solid #FF9AE9;
-    border-radius: 100%;
-    padding: 10px 20px;
-    margin-left: 0px;
-    width: 200px;
-    height: 60px;
-}
-
-.button-container{
-    display: flex;
-    flex-direction:  row;
-    justify-content: left;
-    margin-top: 10px;
-    gap: 10px;
-    margin-left: 1320px;
-    position: absolute;
-
-}
-
-.button-container2{
-    display: flex;
-    flex-direction:  row;
-    justify-content: right;
-    gap: 50px;
-    margin-left: 55px;
-    margin-right: 50px;
-    position: absolute;
-    left: 50px;
-    margin-top: 250px;
-    letter-spacing: -10pt;
-
-}
-
-button:hover{
+button:hover {
     background-color: #FF9AE9;
     color: #2900F5;
     border: 1px solid #FF9AE9;
     transition: 0.3s ease-in-out;
 }
 
-p{
-    font-family: klaus;
-    font-size: 3em;
-    color: #FF9AE9;
-    margin-top: 500px;
-    margin-left: 50px;
-}
-
-.fish{
-    left: 400px;
-    top: 600px;
-    display: none;
-}
-
-body{
-    overflow-x: hidden;
-    overflow-y: hidden;
-    user-select: none; /* Prevents text selection */
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
-}
-
-.parent1, .parent2, .parent3, a {
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-}
-
 .large-btn {
-    width: 150px !important;  
-    height: 150px !important;  
-    font-size: 2em !important;  
-    border: 1px solid #FF9AE9 !important;
+    width: 400px !important;
+    height: 400px !important;
+    font-size: 8em !important;
+    border: 3px solid #FF9AE9 !important;
 }
 
-.button2{
+.button2 {
     display: flex;
-    direction:  column;  justify-content: center; 
-    align-items: center;      
+    direction: row;
+    justify-content: center;
+    align-items: center;
     font-family: klausthin;
     font-size: 0.7em;
     color: #2900F5;
@@ -279,86 +234,76 @@ body{
     width: 200px;
     height: 60px;
 }
-    
-    .button-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        gap: 10px;
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        left: auto;
-        margin: 0;
-    }
 
-  
-    .button-container button {
-        width: 50px;
-        height: 50px;
-        font-size: 0.6em;
-        background-color: #FF9AE9;
-        color: #2900F5;
-    }
-
-.button-container2{
+.button-container {
     display: flex;
-    flex-direction:  column;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 10px;
+    position: fixed;
+    top: 90px;
+    right: 50px;
+    left: auto;
+    margin: 0;
+}
+
+.button-container button {
+    width: 50px;
+    height: 50px;
+    font-size: 0.6em;
+    background-color: #FF9AE9;
+    color: #2900F5;
+}
+
+.button-container2 {
+    display: flex;
+    flex-direction: row;
     justify-content: right;
     gap: 50px;
     margin-left: 0px;
     margin-right: 50px;
     position: absolute;
     left: 90px;
-    margin-top: 150px;
+    margin-top: 300px;
     letter-spacing: -10pt;
-
 }
 
-
-p{
-    font-family: klaus;
-    font-size: 3em;
-    color: #FF9AE9;
-    margin-top: 500px;
-    margin-left: 50px;
-}
-    
-
-
+/* ============================================
+   MOBILE STYLES
+   ============================================ */
 @media screen and (max-width: 768px) {
     .panel-content h2 {
         font-size: 3em;
         margin: 20px;
         margin-bottom: 50px;
     }
-    
+
     .panel-content p {
         font-size: 1em;
         line-height: 1.2em;
         margin: 0;
         max-width: 100%;
     }
-    
+
     .child1 {
-        font-size: 4.5em;
+        font-size: 4em;
         letter-spacing: -2pt;
         line-height: 0.8em;
         margin-left: 20px;
         margin-top: -50px;
     }
-    
+
     .child2 {
         font-size: 1em;
         margin-left: 20px;
         margin-top: -20px;
     }
-    
+
     .child3 {
         font-size: 0.8em;
         margin-left: 20px;
     }
-    
+
     .child4 {
         font-size: 1em;
         margin-left: 20px;
@@ -366,31 +311,21 @@ p{
     }
 
     button {
-        display: flex;
-        direction: column;
-        justify-content: center;
-        align-items: center;
-        font-family: klausthin;
         font-size: 0.7em;
         color: #FF9AE9;
         background-color: #2900F5;
         border: 1px solid #FF9AE9;
-        border-radius: 100%;
-        padding: 10px 20px;
-        margin-left: 0px;
         width: 50px;
         height: 50px;
     }
-    
-    /* Disable ALL hover effects on mobile */
+
     button:hover {
         background-color: #2900F5 !important;
         color: #FF9AE9 !important;
         border: 1px solid #FF9AE9 !important;
         transition: none !important;
     }
-    
-    /* Large buttons stay pink with blue text */
+
     .large-btn {
         width: 120px !important;
         height: 120px !important;
@@ -399,12 +334,12 @@ p{
         background-color: #FF9AE9 !important;
         color: #2900F5 !important;
     }
-    
+
     .large-btn:hover {
         background-color: #FF9AE9 !important;
         color: #2900F5 !important;
     }
-    
+
     .button2 {
         color: #FF9AE9;
         background-color: #2900F5;
@@ -420,8 +355,7 @@ p{
         background: transparent !important;
         color: #2900F5 !important;
     }
-    
-    /* Position small buttons under header */
+
     .button-container {
         display: flex;
         flex-direction: row;
@@ -429,12 +363,11 @@ p{
         gap: 10px;
         position: absolute;
         top: 150px;
-        left: 20px;
+        left: 250px;
         right: auto;
-
         margin-right: 20px;
     }
-    
+
     .button-container button {
         width: 50px;
         height: 50px;
@@ -443,12 +376,11 @@ p{
         color: #FF9AE9 !important;
         border: 1px solid #FF9AE9 !important;
     }
-    
+
     .button-container button:hover {
         background-color: #2900F5 !important;
         color: #FF9AE9 !important;
     }
-
 
     .button-container2 {
         display: flex;
@@ -461,7 +393,7 @@ p{
         left: 50%;
         transform: translate(-50%, -50%);
         margin: 0;
-        margin-top: 50px; /* Push down a bit more */
+        margin-top: 50px;
     }
 
     p {

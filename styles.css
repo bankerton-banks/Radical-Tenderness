@@ -110,28 +110,28 @@ a:has(.image2.active) {
 @media (max-width: 768px) {
 
   body{
-    overflow-x: hidden;
-    overflow-y: hidden ;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
   }
     .text1 {
-        font-size: 3em;
+        font-size: 4.5em;
         top: 30px;
         left: 40px;
-        line-height: 30pt;
+        line-height: 45pt;
         letter-spacing: -2pt;
     }
     
        
     .text2 {
         font-size: 0.8em;
-        top: 150px;
+        top: 220px;
         left: 40px;
     }
 
     .image1 {
-        width: 100%;
-        margin-top: 300px;
-        margin-left: 0;
+        width: 400px !important;
+       margin: auto;
+       margin-top: 300px;
     }
     .image2 {
         width: 95vw; /* Use viewport width instead of fixed pixels */
@@ -140,7 +140,7 @@ a:has(.image2.active) {
     }
     
     .image2.active {
-        width: 95vw;
+        width: 500px !important;
         max-width: 95vw;
     }
 
