@@ -183,9 +183,13 @@ function moveUp() {
 }
 
 nextBtn.addEventListener("click", function () {
-    if (!animationId) {
-        moveUp();
+    // Cancel any existing animation first
+    if (animationId) {
+        cancelAnimationFrame(animationId);
     }
+    // Always start/restart the animation
+    animationId = null;
+    moveUp();
 });
 
 deleteBtn.addEventListener("click", function () {
