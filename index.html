@@ -46,41 +46,55 @@ function switchElement() {
   const text1 = document.getElementById('text1');
   const text2 = document.getElementById('text2');
   const text3 = document.getElementById('text3');
-
-  // Hide text and image1
-  if (text1) text1.classList.add('hidden');
-  if (text2) text2.classList.add('hidden');
-  if (text3) text3.classList.add('hidden');
-  image1.classList.add('hidden');
-
-  // Place image2 centered but off-screen to the right
-  image2.style.position = 'fixed';
-  image2.style.top = '50%';
-  image2.style.left = '50%';
-
-  image2.style.transform = 'translate(-50%, -50%) translateX(150vw)';
+  
+  const rect = image1.getBoundingClientRect();
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  
+  // Set initial position and size exactly matching image1
+  image2.style.top = rect.top + 'px';
+  image2.style.left = rect.left + 'px';
+  image2.style.width = rect.width + 'px';
+  image2.style.height = rect.height + 'px';
+  image2.style.transform = 'translate(0, 0) translate3d(0, 0, 0)';
   image2.style.transition = 'none';
   image2.style.opacity = '1';
   image2.style.display = 'block';
+  
+  // For mobile, set crisp rendering immediately
+  if (isMobile) {
+    image2.style.imageRendering = '-webkit-optimize-contrast';
+  }
+  
+  // Hide all text elements
+  if (text1) text1.classList.add('hidden');
+  if (text2) text2.classList.add('hidden');
+  if (text3) text3.classList.add('hidden');
+  
+  // Hide image1
+  image1.classList.add('hidden');
 
-  // Slide in from right
+  // Use requestAnimationFrame for smoother animation
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
-      image2.style.transition = 'transform 2.2s cubic-bezier(0.4, 0, 0.2, 1)';
-      image2.style.transform = 'translate(-50%, -50%) translateX(0)';
+      // On mobile, transition position/opacity separately from size
+      if (isMobile) {
+        image2.style.transition = 'top 1.2s cubic-bezier(0.4, 0, 0.2, 1), left 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 1.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1)';
+      } else {
+        image2.style.transition = 'all 1.2s cubic-bezier(0.4, 0, 0.2, 1)';
+      }
+      image2.classList.add('active');
     });
   });
 
-  // Slide out to the left, then redirect
+  // Fade out and redirect
   setTimeout(() => {
-    image2.style.transition = 'transform 1.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 1.2s ease-out';
-    image2.style.transform = 'translate(-50%, -50%) translateX(-150vw)';
-    image2.style.opacity = '0';
+    document.body.style.transition = 'opacity 0.8s ease-out';
+    document.body.style.opacity = '0';
 
     setTimeout(() => {
       window.location.href = 'home-page/homepage.html';
-    }, 1000);
-  }, 3500);
+    }, 800);
+  }, 2200);
 }
 </script>
 </body>

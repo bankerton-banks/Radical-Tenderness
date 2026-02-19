@@ -359,9 +359,9 @@ button:hover {
     }
 
     .large-btn {
-        width: 150px !important;
-        height: 150px !important;
-        font-size: 1.8em !important;
+        width: 100px !important;
+        height: 100px !important;
+        font-size: 1.5em !important;
         border: 1px solid #FF9AE9 !important;
         background-color: #FF9AE9 !important;
         color: #2900F5 !important;
@@ -390,8 +390,8 @@ button:hover {
 
     .button-container {
         position: absolute;
-        top: 790px;
-        right: 30%;
+        top: 600px;
+        right: 50%;
         gap: 10px;;
     }
 

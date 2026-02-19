@@ -114,7 +114,7 @@ body {
 
 .image2 {
     position: absolute;
-    width: 1000px;
+    width: 1200px;
     opacity: 0;
     pointer-events: none;
     cursor: pointer;
@@ -127,11 +127,13 @@ body {
 }
 
 .image2.active {
-  opacity: 1;
-  width: 700px;
-  top: 50% !important;
-  left: 50% !important;
-  pointer-events: auto;
+    opacity: 1;
+    width: 1400px;
+    max-width: 95vw;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) translateZ(0) !important;
+    pointer-events: auto;
 }
 
 .image2.fade-out {
