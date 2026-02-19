@@ -22,7 +22,7 @@ html {
 
 
 span{
-    margin-left: 10px;
+    margin-left: 11.5px;
 }
 body {
     opacity: 0;
@@ -297,7 +297,7 @@ button:hover {
         line-height: 1.2em;
         padding: 10px;
         margin: 0 20px;
-        max-width: 100%;
+        width: 300px;
         margin-top: -30px;
     }
 
@@ -318,11 +318,11 @@ button:hover {
 
         .side-panel {
         position: fixed;
-        top: 0;
+        top: 20;
         right: -800px;
-        width: 600px;
+        width: 350px;
         border-radius: 50px;
-        height: 100vh;
+        height: 600px;
         background-color: #FF9AE9;
         transition: right 0.4s ease-in-out;
         z-index: 1000;

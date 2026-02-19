@@ -206,7 +206,7 @@ a{
 
 @media screen and (max-width: 768px) {
     h1 {
-        font-size: 2em;
+        font-size: 3em;
         margin-left: 20px;
         margin-top: 30px;
         letter-spacing: -0.06em;
@@ -264,6 +264,7 @@ a{
     height: 60px;
     font-size: 0.8em;
     margin-left: 30px ;
+    display: none;
 }
     
     /* Position Next/Delete buttons in upper right */
@@ -310,13 +311,13 @@ a{
         height: 70px;
         font-size: 0.8em;
     }
-    
-    button {
+       button {
         background-color: #FF9AE9;
         color: #2900F5;
         border: 1px solid #FF9AE9;
         width: 50px;
         height: 50px;
+        font-size: 0.5em;
     }
     
     button:hover {
@@ -326,7 +327,7 @@ a{
         transition: none !important;
     }
     
-.menu{
+    .menu{
     display: flex;
     flex-direction: column;
     gap: 20px;
