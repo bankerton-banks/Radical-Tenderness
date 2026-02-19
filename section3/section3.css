@@ -267,6 +267,9 @@ body {
     }
 }
 
+.mobile{
+    display: none;
+}
 
 
 @media (max-width: 768px) {
@@ -323,7 +326,9 @@ body {
     position: absolute
 }
 
-
+.desktop{
+    display: none;
+}
 
     body {
         overflow-y: auto !important;

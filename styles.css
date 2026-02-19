@@ -140,6 +140,10 @@ body {
     opacity: 0;
 }
 
+
+.mobilesvg{
+    display: none;
+}
 a:has(.image2.active) {
     pointer-events: auto;
 }
@@ -148,6 +152,10 @@ a:has(.image2.active) {
 @media (max-width: 768px) {
     body {
         overflow: hidden !important;
+    }
+
+    .desktopsvg{
+        display: none;
     }
 
     span {
