@@ -326,6 +326,35 @@ body {
     position: absolute
 }
 
+    button {
+        background-color: #FF9AE9;
+        color: #2900F5;
+        border: 1px solid #FF9AE9;
+        width: 50px;
+        height: 50px;
+        font-size: 0.5em;
+    }
+
+    .special {
+    background-color: #2900F5 !important;
+    color: #FF9AE9 !important;
+
+}
+
+.special:hover {
+    background-color: #FF9AE9 !important;
+    color: #2900F5 !important;
+    border: 1px solid #FF9AE9 !important;
+    transition: none !important;
+}
+
+.child12{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 900px;
+    left: 45%;
+}
 .desktop{
     display: none;
 }
