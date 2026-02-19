@@ -279,6 +279,28 @@ body {
         padding: 20px 0 100px 0;
     }
 
+      h1 {
+        font-size: 2em;
+        margin-left: 20px;
+        margin-top: 30px;
+        letter-spacing: -0.06em;
+        line-height: 20pt;
+    }
+    
+    h4 {
+        font-size: 0.9em;
+        margin-left: 25px;
+        margin-top: -10px;
+    }
+    
+    p {
+        font-size: 1em;
+        line-height: 0.9em;
+        padding: 15px;
+        margin: 20px;
+        letter-spacing: -0.06em;
+    }
+
     .child1, .child2, .child3, .child4, .child5,
     .child6, .child7, .child8, .child9, .child10,
     .child11 {
@@ -289,25 +311,19 @@ body {
         height: auto;
         rotate: none;
         margin: 10px auto;
+        margin-top: -20px;
     }
 
-    .child4 {
-        width: 95vw;
-    }
+    .menu{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 25px;
+    margin-top: 50px;
+    position: absolute
+}
 
-    .child7 {
-        width: 95vw;
-        rotate: none;
-    }
 
-    .child12 {
-        position: relative;
-        top: auto;
-        left: auto;
-        margin: 30px auto;
-        width: 80px;
-        height: 80px;
-    }
 
     body {
         overflow-y: auto !important;

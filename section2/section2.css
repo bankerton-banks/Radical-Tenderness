@@ -232,7 +232,7 @@ a{
     }
     
     .parentcontainer {
-        left: 70%;
+        left: 133%;
         transform: translateX(-50%);
         gap: 200px;
     }
@@ -257,6 +257,13 @@ a{
     background: transparent !important;
     color: #2900F5 !important;
     opacity: 1 !important;
+}
+
+.section3{
+    width: 60px;
+    height: 60px;
+    font-size: 1em;
+    margin-left: 0px ;
 }
     
     /* Position Next/Delete buttons in upper right */
@@ -337,6 +344,7 @@ a{
     border: 1px solid #FF9AE9 !important;
     transition: none !important;
 }
+
 
 }
 
