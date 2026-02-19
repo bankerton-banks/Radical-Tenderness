@@ -164,7 +164,7 @@
 const parentContainer = document.querySelector(".parentcontainer");
 
 let positionY = window.innerHeight;
-let speed = 2;
+let speed = window.innerWidth <= 768 ? 1 : 2;
 let containerHeight = 0;
 
 function moveUp() {
