@@ -167,12 +167,6 @@
   <a href="../section2/section2.html" class="nextpagebutton hidden"><button>section 2</button></a>
 <script>
     let clickCount = 0;
-    // Declare ALL variables first
-    let tripleClickCount = 0;
-    let clickTimer = null;
-    let animationInterval = null;
-    let animationTimeout = null;
-    let isAnimating = false;
     let currentBgColor = '#2900F5';
     let currentTextColor = '#FF9AE9';
 
@@ -194,7 +188,6 @@
                         textblock6, textblock7, textblock8, textblock9, textblock10, textblock11, nextPageButton];
 
     const body = document.body;
-    const allText = document.querySelectorAll('h1, h4, p, span, button');
     const buttons = document.querySelectorAll('button');
 
     buttons.forEach(btn => {
@@ -213,15 +206,6 @@
     document.addEventListener('click', function(e) {
         if (e.target.id === 'deleteBtn') return;
 
-        if (isAnimating) {
-            clearInterval(animationInterval);
-            clearTimeout(animationTimeout);
-            isAnimating = false;
-            tripleClickCount = 0;
-            return;
-        }
-
-        // Single click = reveal next block
         if (clickCount < 12) {
             clickCount++;
             textblocks[clickCount].classList.add('show');
@@ -233,16 +217,6 @@
                 window.scrollTo({ top: window.innerHeight * 0.9, behavior: 'smooth' });
             }
         }
-
-        // Triple click = color animation
-        tripleClickCount++;
-        if (clickTimer) clearTimeout(clickTimer);
-        if (tripleClickCount === 3) {
-            startColorAnimation();
-            tripleClickCount = 0;
-        } else {
-            clickTimer = setTimeout(() => { tripleClickCount = 0; }, 500);
-        }
     });
 
     deleteBtn.addEventListener('click', () => {
@@ -251,47 +225,6 @@
             clickCount--;
         }
     });
-
-    function startColorAnimation() {
-        const backgroundColors = ['#990559', '#165C1C', '#F08DFF', '#FAC8C9', '#E74447', '#5D2800'];
-        const textColors = ['#52A7E7', '#FFB055', '#0D409F', '#115B80', '#E4F2FF', '#B5FFA4'];
-
-        if (animationInterval) clearInterval(animationInterval);
-        if (animationTimeout) clearTimeout(animationTimeout);
-        isAnimating = true;
-
-        animationInterval = setInterval(() => {
-            const randomBgColor = backgroundColors[Math.floor(Math.random() * backgroundColors.length)];
-            const randomTextColor = textColors[Math.floor(Math.random() * textColors.length)];
-            currentBgColor = randomBgColor;
-            currentTextColor = randomTextColor;
-            body.style.backgroundColor = randomBgColor;
-            allText.forEach(el => el.style.color = randomTextColor);
-            document.querySelectorAll('button').forEach(btn => {
-                btn.style.borderColor = randomTextColor;
-                if (btn.id === 'pagebutton') {
-                    btn.style.backgroundColor = randomTextColor;
-                    btn.style.color = randomBgColor;
-                }
-            });
-        }, 200);
-
-        animationTimeout = setTimeout(() => {
-            clearInterval(animationInterval);
-            isAnimating = false;
-            currentBgColor = '#2900F5';
-            currentTextColor = '#FF9AE9';
-            body.style.backgroundColor = '#2900F5';
-            allText.forEach(el => el.style.color = '#FF9AE9');
-            document.querySelectorAll('button').forEach(btn => {
-                btn.style.borderColor = '#FF9AE9';
-                if (btn.id === 'pagebutton') {
-                    btn.style.backgroundColor = '#FF9AE9';
-                    btn.style.color = '#2900F5';
-                }
-            });
-        }, 2000);
-    }
 </script>
 </body>
 </html>
