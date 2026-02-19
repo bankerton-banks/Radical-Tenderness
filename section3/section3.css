@@ -267,3 +267,50 @@ body {
     }
 }
 
+
+
+@media (max-width: 768px) {
+    .parentcontainer {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 20px 0 100px 0;
+    }
+
+    .child1, .child2, .child3, .child4, .child5,
+    .child6, .child7, .child8, .child9, .child10,
+    .child11 {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 85vw;
+        height: auto;
+        rotate: none;
+        margin: 10px auto;
+    }
+
+    .child4 {
+        width: 95vw;
+    }
+
+    .child7 {
+        width: 95vw;
+        rotate: none;
+    }
+
+    .child12 {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin: 30px auto;
+        width: 80px;
+        height: 80px;
+    }
+
+    body {
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+    }
+}
