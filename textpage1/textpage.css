@@ -239,75 +239,7 @@ button:hover{
 }
 
 
-.hamburger.open:hover {
-    background-color: transparent !important;
-}
 
-.hamburger.open:hover span {
-    background-color: #FF9AE9 !important;
-}
-
-.hamburger:hover {
-    background-color: #FF9AE9;
-}
-
-.hamburger:hover span {
-    background-color: #2900F5;
-}
-
-.hamburger.open span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.hamburger.open span:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger.open span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-}
-
-.menu-panel {
-    position: fixed;
-    top: 50px;
-    right: -350px;
-    width: 300px;
-    height: 500px;
-    background-color: #FF9AE9;
-    z-index: 3000;
-    transition: right 0.4s ease-in-out;
-    border-radius: 30px;
-    margin-right: 50px;
-}
-
-.menu-panel.open {
-    right: 0;
-}
-
-.menu-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
-    gap: 15px;
-}
-
-.menu-content button {
-    background-color: transparent !important;
-    color: #2900F5 !important;
-    border-color: #2900F5;
-    width: 90px;
-    height: 90px;
-    border-radius: 100px;
-}
-
-.menu-content button:hover {
-    background-color:  #2900F5 !important;
-    color: #FF9AE9 !important;
-    border-color: #2900F5;
-  
-}
 .close-btn {
     position: absolute;
     top: 20px;
@@ -404,115 +336,38 @@ a{
     position: absolute
 }
     
-    span {
-        font-size: 0.9em;
-    }
+.textblock1 p,
+.textblock2 p,
+.textblock3 p,
+.textblock4 p,
+.textblock5 p,
+.textblock6 p,
+.textblock7 p,
+.textblock8 p,
+.textblock9 p,
+.textblock10 p,
+.textblock11 p {
+    padding: 0;
+    margin: 0;
+      font-family: klausthin;
+    font-size: 0.8em;
+    line-height: .9em;
+    color: #FF9AE9;
+}
     
-    /* All buttons aligned on right side */
-    #nextBtn,
-    #deleteBtn,
-    .hamburger {
-        position: fixed;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        font-size: 0.6em;
-    }
-    
-    .hamburger {
-        top: 160px;
-        width: 59px;
-        height: 59px;
-        left: 82%;
-    }
-    
-    #nextBtn {
-        top: 700px;
-        right: 230px;
-        width: 150px;
-        height: 150px;
-        font-size: 1em;
-    }
-    
-    #deleteBtn {
-        top: 700px;
-        width: 150px;
-        height: 150px;
-        font-size: 1em;
-    }
-    
-    .hamburger span {
-        width: 16px;
-    }
-    
-    .menu-panel {
-        width: 150px;
-        height: 400px;
-        margin-right: 30px;
-    }
-    
-    .menu-content button {
-        width: 70px;
-        height: 70px;
-        font-size: 0.8em;
-    }
-    
-    /* Reposition all text blocks for mobile */
-    .textblock1 {
-        top: 150px;
-        left: 5%;
-    }
-    
-    .textblock2 {
-        top: 220px;
-        left: 50%;
-    }
-    
-    .textblock3 {
-        top: 360px;
-        left: 60%;
-    }
-    
-    .textblock4 {
-        top: 320px;
-        left: 10%;
-    }
-    
-    .textblock5 {
-        top: 580px;
-        left: 40%;
-    }
-    
-    .textblock6 {
-        top: 430px;
-        left: 5%;
-    }
-    
-    .textblock7 {
-        top: 450px;
-        left: 70%;
-    }
-    
-    .textblock8 {
-        top: 380px;
-        left: 38%;
-    }
-    
-    .textblock9 {
-        top: 540px;
-        left: 10%;
-    }
-    
-    .textblock10 {
-        top: 580px;
-        left: 70%;
-    }
-    
-    .textblock11 {
-        top: 200px;
-        left: 25%;
-    }
-    
+.textblock1 { top: 18vh; left: 15%; }
+.textblock2 { top: 22vh; left: 55%; }
+.textblock3 { top: 35vh; left: 70%; }
+.textblock4 { top: 40vh; left: 30%; }
+.textblock5 { top: 15vh; left: 35%; }
+.textblock6 { top: 55vh; left: 15%; }
+.textblock7 { top: 60vh; left: 35%; }
+.textblock8 { top: 45vh; left: 50%; }
+.textblock9 { top: 75vh; left: 15%; }
+.textblock10 { top: 10vh; left: 70%; }
+.textblock11 { top: 65vh; left: 70%; }
+
+
     .nextpagebutton {
         top: 100px;
         left: 82%;
@@ -554,22 +409,6 @@ a{
         line-height: 1;
     }
 
-    .close-btn:hover {
-        background: transparent !important;
-        color: #2900F5 !important;
-        opacity: 1 !important;
-    }
-
-    .menu-content button {
-        background-color: transparent !important;
-        color: #2900F5 !important;
-        border-color: #2900F5 !important;
-    }
-    
-    .menu-content button:hover {
-        background-color: transparent !important;
-        color: #2900F5 !important;
-    }
 
     .nextpagebutton {
     position: relative;
