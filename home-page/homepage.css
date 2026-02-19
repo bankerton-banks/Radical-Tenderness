@@ -1,6 +1,4 @@
-/* ============================================
-   RESET & BASE STYLES
-   ============================================ */
+/* RESET & BASE STYLES */
 * {
     margin: 0;
     padding: 0;
@@ -52,9 +50,7 @@ a {
     -moz-user-select: none;
 }
 
-/* ============================================
-   LAYOUT CONTAINERS
-   ============================================ */
+/* LAYOUT CONTAINERS */
 .parent1 {
     display: flex;
     justify-content: center;
@@ -84,14 +80,12 @@ a {
     margin-top: 400px;
 }
 
-/* ============================================
-   TEXT ELEMENTS
-   ============================================ */
+/* TEXT ELEMENTS */
 .child1 {
     font-family: Klaus;
-    font-size: 7em;
+    font-size: 4em;
     color: #FF9AE9;
-    letter-spacing: -5pt;
+    letter-spacing: -0.08em;
     margin-left: 50px;
     margin-top: -30px;
 }
@@ -137,15 +131,16 @@ p {
     display: none;
 }
 
-/* ============================================
-   SIDE PANEL
-   ============================================ */
+/* SIDE PANEL */
 .side-panel {
     position: fixed;
     top: 0;
     right: -800px;
-    width: 600px;
-    border-radius: 100px;
+    width: 500px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
     height: 100vh;
     background-color: #FF9AE9;
     transition: right 0.4s ease-in-out;
@@ -159,23 +154,31 @@ p {
 
 .close-btn {
     position: absolute;
-    top: 50px;
+    top: 25px;
     right: 50px;
-    font-size: 2em;
+    font-size: 4em;
     background: transparent;
     border: none;
     color: #2900F5;
     cursor: pointer;
-    width: 50px;
-    height: 50px;
     padding: 0;
     margin: 0;
+}
+
+.close-btn:hover {
+    background: transparent !important;
+    border: none !important;
+    color: #2900F5 !important;
+    opacity: 1 !important;
+    cursor: pointer;
 }
 
 .panel-content h2 {
     font-family: Klausthin;
     font-size: 5em;
-    margin: 50px;
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-right: 20px;
     margin-bottom: 130px;
     letter-spacing: -3pt;
     color: #2900F5;
@@ -185,27 +188,26 @@ p {
     font-family: klausthin;
     font-size: 1.2em;
     line-height: 1.2em;
-    margin: 0 50px;
-    max-width: 500px;
+    margin-top: -110px;
+    width: 380px;
+    margin-left: 50px;
     color: #2900F5;
 }
 
-/* ============================================
-   BUTTONS
-   ============================================ */
+/* BUTTONS */
 button {
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: klausthin;
-    font-size: 0.8em !important;
-    color: #FF9AE9;
-    background-color: transparent;
+    /* font-size: 0.8em !important; fo*/
+    color: #2900F5;
+    background-color: #FF9AE9;
     border: 1px solid #FF9AE9;
     border-radius: 100%;
     padding: 10px 20px;
-    width: 70px !important;
-    height: 70px !important;
+    height: 80px;
+    font-size: 4em;
     cursor: pointer;
 }
 
@@ -221,14 +223,22 @@ button:hover {
     height: 400px !important;
     font-size: 8em !important;
     border: 3px solid #FF9AE9 !important;
+    background-color: transparent !important;
+    color: #FF9AE9 !important;
 }
+
+.large-btn:hover {
+    background-color: #FF9AE9 !important;
+    color: #2900F5 !important;
+}
+
 
 .button2 {
     font-size: 0.7em;
     color: #2900F5;
     background-color: #FF9AE9;
     border: 1px solid #FF9AE9;
-    width: 200px;
+    width: 100px;
     height: 60px;
 }
 
@@ -238,7 +248,7 @@ button:hover {
     justify-content: flex-end;
     gap: 10px;
     position: fixed;
-    top: 90px;
+    top: 50px;
     right: 50px;
     z-index: 100;
 }
@@ -247,8 +257,16 @@ button:hover {
     width: 70px !important;
     height: 70px !important;
     font-size: 0.8em !important;
-    background-color: #FF9AE9;
-    color: #2900F5;
+    background-color: #FF9AE9 !important;
+    color: #2900F5 !important;
+    border: 1px solid #FF9AE9 !important;
+}
+
+/* On hover — no fill, pink text */
+.button-container button:hover {
+    background-color: transparent !important;
+    color: #FF9AE9 !important;
+    border: 1px solid #FF9AE9 !important;
 }
 
 .button-container2 {
@@ -262,9 +280,7 @@ button:hover {
     margin-top: 300px;
 }
 
-/* ============================================
-   MOBILE STYLES
-   ============================================ */
+/* MOBILE STYLES  */
 @media screen and (max-width: 768px) {
     .panel-content h2 {
         font-size: 3em;
@@ -273,10 +289,40 @@ button:hover {
     }
 
     .panel-content p {
-        font-size: 1em;
+        font-size: 0.9em;
         line-height: 1.2em;
+        padding: 10px;
         margin: 0 20px;
         max-width: 100%;
+        margin-top: -30px;
+    }
+
+        .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 1.5em;
+        background: transparent;
+        border: none;
+        color: #2900F5;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        padding: 0;
+        margin: 0;
+    }
+
+        .side-panel {
+        position: fixed;
+        top: 0;
+        right: -800px;
+        width: 600px;
+        border-radius: 50px;
+        height: 100vh;
+        background-color: #FF9AE9;
+        transition: right 0.4s ease-in-out;
+        z-index: 1000;
+        overflow-y: auto;
     }
 
     .child1 {
@@ -304,14 +350,6 @@ button:hover {
         margin-top: -20px;
     }
 
-    button {
-        font-size: 0.7em !important;
-        color: #2900F5;
-        background-color: #FF9AE9;
-        border: 1px solid #FF9AE9;
-        width: 40px !important;
-        height: 40px !important;
-    }
 
     button:hover {
         background-color: #2900F5 !important;
@@ -321,8 +359,8 @@ button:hover {
     }
 
     .large-btn {
-        width: 120px !important;
-        height: 120px !important;
+        width: 150px !important;
+        height: 150px !important;
         font-size: 1.8em !important;
         border: 1px solid #FF9AE9 !important;
         background-color: #FF9AE9 !important;
@@ -352,16 +390,15 @@ button:hover {
 
     .button-container {
         position: absolute;
-        top: 150px;
-        left: 250px;
-        right: auto;
-        gap: 10px;
+        top: 790px;
+        right: 30%;
+        gap: 10px;;
     }
 
     .button-container button {
-        width: 40px !important;
-        height: 40px !important;
-        font-size: 0.6em !important;
+        width: 80px !important;
+        height: 80px !important;
+        font-size: 0.8em !important;
         background-color: #2900F5 !important;
         color: #FF9AE9 !important;
         border: 1px solid #FF9AE9 !important;
@@ -379,7 +416,7 @@ button:hover {
         align-items: center;
         gap: 30px;
         position: fixed;
-        top: 50%;
+        top: 45%;
         left: 50%;
         transform: translate(-50%, -50%);
         margin: 0;

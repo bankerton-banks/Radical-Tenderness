@@ -14,36 +14,21 @@
         <link rel="stylesheet" href="textpage.css">
     </head>
    <body style="background-color: #2900F5;">
-
-<!-- Hamburger Menu Button -->
-<button class="hamburger" id="hamburgerBtn">
-    <span></span>
-    <span></span>
-    <span></span>
-</button>
-
-
 <!-- Menu Panel -->
-<div class="menu-panel" id="menuPanel">
-    <button class="close-btn" id="closeBtn">&times;</button>
-    <div class="menu-content">
-        <a href="../home-page/homepage.html"><button>home</button></a>
-        <a href="../textpage1/textpage1.html"><button>.✦ ݁˖</button></a> 
+
+    <div class="menu">
+        <a href="../textpage1/textpage1.html"><button class="special">.✦ ݁˖</button></a>
         <a href="../section2/section2.html"><button>⋆˚꩜｡</button></a>
-        <a href="../textpage3/textpage3.html"><button>₊˚⊹♡</button></a>
+        <a href="../section3/section3.html"><button>₊˚⊹♡</button></a>
     </div>
-</div>
 
 
-
-    <h1 class="mobile"> Radical <br>Tenderness is </h1>
-    <h1 class="desktop"> Radical <br>Tenderness is </h1>
+    <h1 class="mobile"> Radical <br>Tenderness :  </h1>
+    <a href="../home-page/homepage.html"><h1 class="desktop"> Radical <br>Tenderness:</h1></a>
     <h4> section 1</h4>
-    <button id="nextBtn">Next</button>
-    <button id="deleteBtn">Delete</button>
     <div class="textblock1 hidden">
         <p>
-        <span>It is </span>
+        it is <br>
         practicing <br>
         attunement<br>
         It is listening<br>
@@ -60,7 +45,7 @@
 
     <div class="textblock2 hidden">
         <p>
-        <span>It is </span>
+         it is <br>
         engaging<br>
         with each<br>
         other beyond<br>
@@ -73,8 +58,7 @@
 
      <div class="textblock3 hidden">
         <p>
-        <span>It is </span>
-        It is dancing<br>
+        it is dancing<br>
         beyond<br>
         the loop of<br>
         identification<br>
@@ -85,7 +69,7 @@
 
        <div class="textblock4 hidden">
         <p>
-        <span>It is </span>
+        it is <br>
         letting go of <br>
         possessions,<br>
         of possessiveness<br>
@@ -94,7 +78,7 @@
 
         <div class="textblock5 hidden">
         <p>
-        <span>It is </span>
+          it is <br>
         feeling <br>
         part of<br>
         a wider<br>
@@ -106,7 +90,7 @@
     </div>
     <div class="textblock6 hidden">
             <p>
-            <span>It is </span>
+              it is <br>
           queering <br>
            time <br>
             </p>
@@ -114,7 +98,7 @@
 
      <div class="textblock7 hidden">
         <p>
-        <span>It is </span>
+          it is <br>
         setting what<br>
         matters<br>
         in the time<br>
@@ -128,7 +112,7 @@
 
      <div class="textblock8 hidden">
         <p>
-        <span>It is </span>
+          it is <br>
         to be <br>
         sense-full,<br>
         to allow our<br>
@@ -139,11 +123,12 @@
         always<br>
         trapping it<br>
         into meaning<br>
+        </p>
     </div>
 
      <div class="textblock9 hidden">
         <p>
-        <span>It is </span>
+           it is <br>
         not<br>
         holding<br>
        “being”<br>
@@ -154,7 +139,7 @@
 
      <div class="textblock10 hidden">
         <p>
-        <span>It is </span>
+          it is <br>
         presencing <br>
         what we don’t<br>
         know, what<br>
@@ -168,7 +153,7 @@
 
         <div class="textblock11 hidden">
         <p>
-        <span>It is </span>
+          it is <br>
         quieting the<br>
         narrativization<br>
         of the world<br>
@@ -182,7 +167,15 @@
   <a href="../section2/section2.html" class="nextpagebutton hidden"><button>section 2</button></a>
 <script>
     let clickCount = 0;
-    const nextBtn = document.getElementById('nextBtn');
+    // Declare ALL variables first
+    let tripleClickCount = 0;
+    let clickTimer = null;
+    let animationInterval = null;
+    let animationTimeout = null;
+    let isAnimating = false;
+    let currentBgColor = '#2900F5';
+    let currentTextColor = '#FF9AE9';
+
     const deleteBtn = document.getElementById('deleteBtn');
     const textblock1 = document.querySelector('.textblock4');
     const textblock2 = document.querySelector('.textblock6');
@@ -195,51 +188,10 @@
     const textblock9 = document.querySelector('.textblock5');
     const textblock10 = document.querySelector('.textblock10');
     const textblock11 = document.querySelector('.textblock9');
-   const nextPageButton = document.querySelector('a.nextpagebutton');
+    const nextPageButton = document.querySelector('a.nextpagebutton');
 
     const textblocks = [null, textblock1, textblock2, textblock3, textblock4, textblock5, 
                         textblock6, textblock7, textblock8, textblock9, textblock10, textblock11, nextPageButton];
-
-    nextBtn.addEventListener('click', () => {
-        if (clickCount < 12) {
-            clickCount++;
-            textblocks[clickCount].classList.add('show');
-            
-            // Auto-scroll when textblock6 appears
-            if (clickCount === 6) {
-                window.scrollTo({
-                    top: 400,
-                    behavior: 'smooth'
-                });
-            }
-            // Auto-scroll when textblock10 appears
-            if (clickCount === 10) {
-                window.scrollTo({
-                    top: 1000,
-                    behavior: 'smooth'
-                });
-            }
-        }
-    });
-
-    deleteBtn.addEventListener('click', () => {
-        if (clickCount > 0) {
-            textblocks[clickCount].classList.remove('show');
-            clickCount--;
-        }
-    });
-
-    // ========== TRIPLE-CLICK COLOR ANIMATION ==========
-    const backgroundColors = ['#990559', '#165C1C', '#F08DFF', '#FAC8C9', '#E74447', '#5D2800'];
-    const textColors = ['#52A7E7', '#FFB055', '#0D409F', '#115B80', '#E4F2FF', '#B5FFA4'];
-
-    let tripleClickCount = 0;
-    let clickTimer = null;
-    let animationInterval = null;
-    let animationTimeout = null;
-    let isAnimating = false;
-    let currentBgColor = '#2900F5';
-    let currentTextColor = '#FF9AE9';
 
     const body = document.body;
     const allText = document.querySelectorAll('h1, h4, p, span, button');
@@ -250,7 +202,6 @@
             this.style.backgroundColor = currentTextColor;
             this.style.color = currentBgColor;
         });
-        
         btn.addEventListener('mouseleave', function() {
             if (!this.id || this.id !== 'pagebutton') {
                 this.style.backgroundColor = 'transparent';
@@ -260,10 +211,8 @@
     });
 
     document.addEventListener('click', function(e) {
-        if (e.target.id === 'nextBtn' || e.target.id === 'deleteBtn') {
-            return;
-        }
-        
+        if (e.target.id === 'deleteBtn') return;
+
         if (isAnimating) {
             clearInterval(animationInterval);
             clearTimeout(animationTimeout);
@@ -271,46 +220,53 @@
             tripleClickCount = 0;
             return;
         }
-        
-        tripleClickCount++;
-        
-        if (clickTimer) {
-            clearTimeout(clickTimer);
+
+        // Single click = reveal next block
+        if (clickCount < 12) {
+            clickCount++;
+            textblocks[clickCount].classList.add('show');
+
+            if (clickCount === 6) {
+                window.scrollTo({ top: window.innerHeight * 0.4, behavior: 'smooth' });
+            }
+            if (clickCount === 10) {
+                window.scrollTo({ top: window.innerHeight * 0.9, behavior: 'smooth' });
+            }
         }
-        
+
+        // Triple click = color animation
+        tripleClickCount++;
+        if (clickTimer) clearTimeout(clickTimer);
         if (tripleClickCount === 3) {
             startColorAnimation();
             tripleClickCount = 0;
         } else {
-            clickTimer = setTimeout(() => {
-                tripleClickCount = 0;
-            }, 500);
+            clickTimer = setTimeout(() => { tripleClickCount = 0; }, 500);
+        }
+    });
+
+    deleteBtn.addEventListener('click', () => {
+        if (clickCount > 0) {
+            textblocks[clickCount].classList.remove('show');
+            clickCount--;
         }
     });
 
     function startColorAnimation() {
-        if (animationInterval) {
-            clearInterval(animationInterval);
-        }
-        if (animationTimeout) {
-            clearTimeout(animationTimeout);
-        }
-        
+        const backgroundColors = ['#990559', '#165C1C', '#F08DFF', '#FAC8C9', '#E74447', '#5D2800'];
+        const textColors = ['#52A7E7', '#FFB055', '#0D409F', '#115B80', '#E4F2FF', '#B5FFA4'];
+
+        if (animationInterval) clearInterval(animationInterval);
+        if (animationTimeout) clearTimeout(animationTimeout);
         isAnimating = true;
-        
+
         animationInterval = setInterval(() => {
             const randomBgColor = backgroundColors[Math.floor(Math.random() * backgroundColors.length)];
             const randomTextColor = textColors[Math.floor(Math.random() * textColors.length)];
-            
             currentBgColor = randomBgColor;
             currentTextColor = randomTextColor;
-            
             body.style.backgroundColor = randomBgColor;
-            
-            allText.forEach(element => {
-                element.style.color = randomTextColor;
-            });
-            
+            allText.forEach(el => el.style.color = randomTextColor);
             document.querySelectorAll('button').forEach(btn => {
                 btn.style.borderColor = randomTextColor;
                 if (btn.id === 'pagebutton') {
@@ -319,18 +275,14 @@
                 }
             });
         }, 200);
-        
+
         animationTimeout = setTimeout(() => {
             clearInterval(animationInterval);
             isAnimating = false;
-            
             currentBgColor = '#2900F5';
             currentTextColor = '#FF9AE9';
-            
             body.style.backgroundColor = '#2900F5';
-            allText.forEach(element => {
-                element.style.color = '#FF9AE9';
-            });
+            allText.forEach(el => el.style.color = '#FF9AE9');
             document.querySelectorAll('button').forEach(btn => {
                 btn.style.borderColor = '#FF9AE9';
                 if (btn.id === 'pagebutton') {
@@ -340,52 +292,6 @@
             });
         }, 2000);
     }
-
-// ========== HAMBURGER MENU ==========
-const hamburgerBtn = document.getElementById('hamburgerBtn');
-const menuPanel = document.getElementById('menuPanel');
-const closeBtn = document.getElementById('closeBtn');
-
-console.log('Hamburger:', hamburgerBtn);
-console.log('Menu Panel:', menuPanel);
-console.log('Close button:', closeBtn);
-
-if (hamburgerBtn && menuPanel) {
-    // Hamburger button click
-    hamburgerBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        console.log('Hamburger clicked!');
-        this.classList.toggle('open');
-        menuPanel.classList.toggle('open');
-    });
-    
-    // Close button click
-    if (closeBtn) {
-        closeBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            console.log('Close button clicked!');
-            menuPanel.classList.remove('open');
-            hamburgerBtn.classList.remove('open');
-        });
-    } else {
-        console.error('Close button not found!');
-    }
-    
-    // Close when clicking outside
-    document.addEventListener('click', function(event) {
-        if (!menuPanel.contains(event.target) && !hamburgerBtn.contains(event.target)) {
-            menuPanel.classList.remove('open');
-            hamburgerBtn.classList.remove('open');
-        }
-    });
-    
-    // Prevent menu clicks from closing
-    menuPanel.addEventListener('click', function(e) {
-        e.stopPropagation();
-    });
-}
-
 </script>
-    <script src="script.js"></script>
 </body>
 </html>

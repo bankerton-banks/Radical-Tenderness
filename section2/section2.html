@@ -15,31 +15,20 @@
     </head>
        <body style="background-color: #2900F5;">
 
-<button class="hamburger" id="hamburgerBtn">
-    <span></span>
-    <span></span>
-    <span></span>
-</button>
-
-<div class="menu-panel" id="menuPanel">
-    <button class="close-btn" id="closeBtn">&times;</button>
-    <div class="menu-content">
-        <a href="../home-page/homepage.html"><button>home</button></a>
-        <a href="../textpage1/textpage1.html"><button>.✦ ݁˖</button></a> 
-        <a href="../section2/section2.html"><button>⋆˚꩜｡</button></a>
-        <a href="../textpage3/textpage3.html"><button>₊˚⊹♡</button></a>
+  <div class="menu">
+        <a href="../textpage1/textpage1.html"><button>.✦ ݁˖</button></a>
+        <a href="../section2/section2.html"><button class="special">⋆˚꩜｡</button></a>
+        <a href="../section3/section3.html"><button>₊˚⊹♡</button></a>
     </div>
-</div>
 
-<h1> Radical <br> Tenderness : <br></h1>
+
+
+<a href="../home-page/homepage.html"><h1> Radical <br> Tenderness : <br></h1></a>
     <h4> section 2</h4>
-    <button id="nextBtn">start</button>
-    <button id="deleteBtn">stop</button>
     <div class="parentcontainer">
     <div class="textblock1 ">
         <p>
-            <span>Is</span>
-       <br> engendering <br>
+        it is <br> engendering <br>
         new<br>
         forms of  <br>
         co-existence<br>
@@ -49,7 +38,7 @@
 
     <div class="textblock2 ">
         <p>
-        <span>It is </span>
+        it is <br>
         engaging<br>
         through artful<br>
         participation<br>
@@ -59,8 +48,8 @@
 
      <div class="textblock3 ">
         <p>
-        <span>It is </span>
-        <br>respecting<br>
+         it is <br>
+        respecting<br>
         different<br>
         medicines<br>
         and working<br>
@@ -73,7 +62,7 @@
 
        <div class="textblock4 ">
         <p>
-        <span>It is </span>
+         it is <br>
          tuning in <br>
          with, not just<br>
          empathizing<br>
@@ -84,8 +73,8 @@
 
         <div class="textblock5 ">
         <p>
-        <span>It is </span>
-        <br>witnessing <br>
+         it is <br>
+        witnessing <br>
         ourselves <br>
         and each<br>
         other moving<br>
@@ -98,7 +87,7 @@
     </div>
     <div class="textblock6 hidden">
             <p>
-            <span>It is </span>
+             it is <br>
             knowing <br> that <br>
             people can <br>
             begin to heal <br>
@@ -110,7 +99,7 @@
 
      <div class="textblock7 ">
         <p>
-        <span>It is </span>
+        it is <br>
         breaking <br>
         the cycle<br>
         in which<br>
@@ -128,7 +117,7 @@
 
      <div class="textblock8 ">
         <p>
-        <span>It is </span>
+         it is <br>
         ‘mandar <br>
         obedeciendo’,<br>
         as the<br>
@@ -140,7 +129,7 @@
 
      <div class="textblock9 ">
         <p>
-        <span>It is </span>
+         it is <br>
         relating <br>
         beyond<br>
         identity,<br>
@@ -153,7 +142,7 @@
 
      <div class="textblock10 ">
         <p>
-        <span>It is </span>
+         it is <br>
         dissolving<br>
         the limits<br>
         and weight<br>
@@ -166,38 +155,34 @@
           <br>
         </p>
     </div>
+    <div>
+<button class="section3">section 3</button>
     </div>
+</div>
 
         <script>
-const nextBtn = document.getElementById("nextBtn");
-const deleteBtn = document.getElementById("deleteBtn");
 const parentContainer = document.querySelector(".parentcontainer");
 
-let positionY = window.innerHeight; // start below screen
-let animationId = null;
+let positionY = window.innerHeight;
 let speed = 2;
+let containerHeight = 0;
 
 function moveUp() {
     positionY -= speed;
+    
+    if (positionY < -containerHeight) {
+        positionY = window.innerHeight;
+    }
+    
     parentContainer.style.top = positionY + "px";
-    animationId = requestAnimationFrame(moveUp);
+    requestAnimationFrame(moveUp);
 }
 
-nextBtn.addEventListener("click", function () {
-    // Cancel any existing animation first
-    if (animationId) {
-        cancelAnimationFrame(animationId);
-    }
-    // Always start/restart the animation
-    animationId = null;
+window.addEventListener('load', function() {
+    // Measure after everything has rendered
+    containerHeight = parentContainer.getBoundingClientRect().height;
     moveUp();
 });
-
-deleteBtn.addEventListener("click", function () {
-    cancelAnimationFrame(animationId);
-    animationId = null;
-});
-
 
     // ========== TRIPLE-CLICK COLOR ANIMATION ==========
     const backgroundColors = ['#990559', '#165C1C', '#F08DFF', '#FAC8C9', '#E74447', '#5D2800'];

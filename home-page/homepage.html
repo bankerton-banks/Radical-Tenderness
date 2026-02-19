@@ -58,6 +58,9 @@
                 in collaboration with Daniel B.Chavez in 2015
                 and can be accessed in the following link:
                 https://danidemilia.com/radical-tenderness
+                <br>
+                <br>
+                <br>
             </p>
         </div>
     </div>
@@ -95,17 +98,17 @@
     const buttons = document.querySelectorAll('button');
     
     // Add hover listeners to buttons
-    buttons.forEach(btn => {
-        btn.addEventListener('mouseenter', function() {
-            this.style.backgroundColor = currentTextColor;
-            this.style.color = currentBgColor;
-        });
-        
-        btn.addEventListener('mouseleave', function() {
-            this.style.backgroundColor = 'transparent';
-            this.style.color = currentTextColor;
-        });
+ buttons.forEach(btn => {
+    if (btn.classList.contains('close-btn')) return; // skip close button
+    btn.addEventListener('mouseenter', function() {
+        this.style.backgroundColor = currentTextColor;
+        this.style.color = currentBgColor;
     });
+    btn.addEventListener('mouseleave', function() {
+        this.style.backgroundColor = 'transparent';
+        this.style.color = currentTextColor;
+    });
+});
     
     document.addEventListener('click', function() {
         // If animating, lock in the current colors

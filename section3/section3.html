@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="section3.css">
+    </head>
+    <body style="background-color: #2900F5;">
+       
+       <a href="../home-page/homepage.html"><h1>Radical <br> Tenderness</h1></a>
+        <h4>section 3</h4>
+
+  <div class="menu">
+        <a href="../textpage1/textpage1.html"><button>.✦ ݁˖</button></a>
+        <a href="../section2/section2.html"><button>⋆˚꩜｡</button></a>
+        <a href="../section3/section3.html"><button class="special">₊˚⊹♡</button></a>
+    </div>
+<div class="parentcontainer">
+    <div>
+        <img src="images/Asset 2text.svg" class="child1">
+    </div>
+
+    <div>
+        <img src="images/Asset 3text.svg" class="child2">
+    </div>
+
+    <div>
+        <img src="images/Asset 4text.svg" class="child3">
+    </div>
+
+    <div>
+        <img src="images/Asset 5text.svg" class="child4">
+    </div>
+
+    <div>
+        <img src="images/Asset 6text.svg" class="child5">
+    </div>
+
+    <div>
+        <img src="images/Asset 7text.svg" class="child6">
+    </div>
+
+    <div>
+        <img src="images/Asset 8text.svg" class="child7">
+    </div>
+
+    <div>
+        <img src="images/Asset 9text.svg" class="child8">
+    </div>
+
+    <div>
+        <img src="images/Asset 10text.svg" class="child9">
+    </div>
+
+    <div>
+        <img src="images/Asset 11text.svg" class="child10">
+    </div>
+
+    <div>
+        <img src="images/Asset 12text.svg" class="child11">
+    </div>
+
+    <div>
+     <a href="/index.html"> <button class="child12">start over</button> </a> 
+    </div>
+
+</div>
+
+
+
+
+
+<!--
+<div class="circle" id="circle">
+        <p class="textblock1">
+            es el dolor<br>
+            de traspasar<br>
+            el corazón<br>
+            (or the pain<br>
+            of piercing<br>
+            the heart)<br>
+        </p>
+        <p class="textblock2">
+            It is turning<br>
+            the heart<br>
+            into a verb:<br>
+            corazonar,<br>
+            senti-pensar<br>
+        </p>
+        <p class="textblock3">
+             It is not<br>
+            about<br>
+            belonging,<br>
+            it is about<br>
+            being whole<br>
+            with<br>
+            the whole<br>
+            shabang<br>
+        </p>
+        <p class="textblock4">
+            It is not<br>
+            either or,<br>
+            but both<br>
+            and more<br>
+        </p>
+        <p class="textblock5">
+            It is looking<br>
+            at painful<br>
+            and difficult<br>
+            things<br>
+            with the<br>
+            love of really<br>
+            wanting<br>
+            to see<br>
+        </p>
+        <p class="textblock7">
+            It is learning<br>
+            from<br>
+            repeated<br>
+            mistakes<br>
+            in order to<br>
+            only make<br>
+            new ones<br>
+            in the future<br>
+        </p>
+        <p class="textblock8">
+            It is listening<br>
+            to the<br>
+            non-human<br>
+            authority,<br>
+            and caring<br>
+            about our<br>
+            relationship<br>
+            to it<br>
+        </p>
+          <p class="textblock9">
+            It is about<br>
+            being open<br>
+            to what we<br>
+            can’t and<br>
+            may never<br>
+            understand<br>
+        </p>
+          <p class="textblock10">
+            It is<br>
+            conditioning<br>
+            the muscles<br>
+            that enable<br>
+            neurogenesis<br>
+        </p>
+
+         <p class="textblock6">
+            It is tending<br>
+            the wounds<br>
+            created when<br>
+            the skin hold-<br>
+            ing one body<br>
+            stretches and<br>
+            tears in order<br>
+            to receive and<br>
+            be refigured<br>
+            by another<br>
+        </p>
+        
+          <p class="textblock11">
+            It is<br>
+            learning<br>
+            to breathe<br>
+            water<br>
+            together<br>
+        </p>
+
+        <p class="textblock12">
+             It is<br>
+              neither me<br>
+             nor you, it is<br>
+             me and you,<br>
+            me in you<br>
+        </p>
+</div>
+-->
+<script>
+    const children = document.querySelectorAll('.parentcontainer > div');
+
+    // Hide all to start
+    children.forEach(child => {
+        child.style.opacity = '0';
+        child.style.transition = 'opacity 0.6s ease';
+    });
+
+    // Reveal one by one
+    children.forEach((child, i) => {
+        setTimeout(() => {
+            child.style.opacity = '1';
+
+            // Once the last child appears, start pulsing
+            if (i === children.length - 1) {
+                setTimeout(() => {
+                    startPulse();
+                }, 700);
+            }
+        }, i * 400);
+    });
+
+    function startPulse() {
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0%   { transform: scale(1); }
+                50%  { transform: scale(1.03); }
+                100% { transform: scale(1); }
+            }
+            .parentcontainer > div {
+                animation: pulse 9s ease-in-out infinite;
+            }
+            .parentcontainer > div:nth-child(2)  { animation-delay: 0.2s; }
+            .parentcontainer > div:nth-child(3)  { animation-delay: 0.4s; }
+            .parentcontainer > div:nth-child(4)  { animation-delay: 0.6s; }
+            .parentcontainer > div:nth-child(5)  { animation-delay: 0.8s; }
+            .parentcontainer > div:nth-child(6)  { animation-delay: 1.0s; }
+            .parentcontainer > div:nth-child(7)  { animation-delay: 1.2s; }
+            .parentcontainer > div:nth-child(8)  { animation-delay: 1.4s; }
+            .parentcontainer > div:nth-child(9)  { animation-delay: 1.6s; }
+            .parentcontainer > div:nth-child(10) { animation-delay: 1.8s; }
+            .parentcontainer > div:nth-child(11) { animation-delay: 2.0s; }
+        `;
+        document.head.appendChild(style);
+    }
+</script>
+    </body>
+</html>

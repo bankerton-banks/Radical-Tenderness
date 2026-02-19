@@ -25,6 +25,17 @@
     line-height: 70pt;
 }
 
+h1{
+    font-family: Klaus ;
+    font-size: 3em;
+    font-weight: 100;
+    color: #FF9AE9;
+    margin-left: 50px;
+    margin-top: 50px;
+    letter-spacing: -0.08em;
+    line-height: 30pt;
+}
+
 h4{
     font-family: Klausthin ;
     font-size: 1em;
@@ -33,6 +44,17 @@ h4{
     margin-top: 0px;
     margin-left: 60px;
     line-height: 35pt;
+}
+
+.desktop{
+    font-family: Klaus ;
+    font-size: 3em;
+    font-weight: 100;
+    color: #FF9AE9;
+    margin-left: 50px;
+    margin-top: 50px;
+    letter-spacing: -0.08em;
+    line-height: 30pt;
 }
 
 body {
@@ -47,178 +69,85 @@ html {
 }
 
 p{
-    font-family: klausthin;
-    font-size: 1.3em;
-    line-height:.8em;
-    color: #FF9AE9;
+  
     padding: 20px;
     top: 200px;
     left: 50px;
 }
 
-span{
-    font-family: klaus ;
-    font-weight: 100;
-    font-size: 1em;
-}
 
-.textblock1 {
+.textblock1 { top: 18vh; left: 15%; }
+.textblock2 { top: 22vh; left: 55%; }
+.textblock3 { top: 35vh; left: 70%; }
+.textblock4 { top: 40vh; left: 30%; }
+.textblock5 { top: 15vh; left: 35%; }
+.textblock6 { top: 55vh; left: 15%; }
+.textblock7 { top: 60vh; left: 35%; }
+.textblock8 { top: 45vh; left: 50%; }
+.textblock9 { top: 75vh; left: 15%; }
+.textblock10 { top: 10vh; left: 70%; }
+.textblock11 { top: 65vh; left: 70%; }
+
+.textblock1,
+.textblock2,
+.textblock3,
+.textblock4,
+.textblock5,
+.textblock6,
+.textblock7,
+.textblock8,
+.textblock9,
+.textblock10,
+.textblock11 {
     position: absolute;
-    top: 300px;
-    left: 12%;
     opacity: 0;
-    transform: scale(0.8);
+    transform: scale(0.85);
     transition: transform 0.6s ease-out, opacity 0.6s ease-out;
 }
 
-.textblock1.show {
-    opacity: 1;
-    transform: scale(1);
-}
-
-
-.textblock2{
-    position: absolute;
-    top: 300px;
-    left: 40%;
-    opacity: 0;
-    transition: opacity 0.6s ease-out;
-}
-
-.textblock2.show {
-    opacity: 1;
-}
-
-
-.textblock3{
-    position: absolute;
-    top: 480px;
-    left: 65%;
-    opacity: 0;
-    transform: scale(0.8);
-    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
-}
-
-.textblock3.show {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.textblock4{
-    position: absolute;
-    top: 420px;
-    left: 25%;
-    opacity: 0;
-    transition: opacity 0.6s ease-out;
-}
-
-.textblock4.show {
-    opacity: 1;
-}
-
-
-.textblock5{
-    position: absolute;
-    top: 300px;
-    left: 68%;
-    opacity: 0;
-    transform: scale(0.8);
-    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
-}
-
-.textblock5.show {
-    opacity: 1;
-    transform: scale(1);
-}
-
-
-.textblock6{
-    position: absolute;
-    top: 550px;
-    left: 8%;
-    opacity: 0;
-    transition: opacity 0.6s ease-out;
-}
-
-.textblock6.show {
-    opacity: 1;
-}
-
-
-.textblock7{
-    position: absolute;
-    top: 550px;
-    left: 30%;
-    opacity: 0;
-    transform: scale(0.8);
-    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
-}
-
-.textblock7.show {
-    opacity: 1;
-    transform: scale(1);
-}
-
-
-.textblock8{
-    position: absolute;
-    top: 460px;
-    left: 52%;
-    opacity: 0;
-    transition: opacity 0.6s ease-out;
-}
-
-.textblock8.show {
-    opacity: 1;
-}
-
-.textblock9{
-    position: absolute;
-    top: 650px;
-    left: 15%;
-    opacity: 0;
-    transform: scale(0.8);
-    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
-}
-
-.textblock9.show {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.textblock10{
-    position: absolute;
-    top: 680px;
-    left: 65%;
-    opacity: 0;
-    transition: opacity 0.6s ease-out;
-}
-
-.textblock10.show {
-    opacity: 1;
-}
-
-.textblock11{
-    position: absolute;
-    top: 700px;
-    left: 40%;
-    opacity: 0;
-    transform: scale(0.8);
-    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
-}
-
+.textblock1.show,
+.textblock3.show,
+.textblock5.show,
+.textblock7.show,
+.textblock9.show,
 .textblock11.show {
     opacity: 1;
     transform: scale(1);
 }
-.hidden {
-    opacity: 0;
+
+.textblock2.show,
+.textblock4.show,
+.textblock6.show,
+.textblock8.show,
+.textblock10.show {
+    opacity: 1;
 }
+
+
+.textblock1 p,
+.textblock2 p,
+.textblock3 p,
+.textblock4 p,
+.textblock5 p,
+.textblock6 p,
+.textblock7 p,
+.textblock8 p,
+.textblock9 p,
+.textblock10 p,
+.textblock11 p {
+    padding: 0;
+    margin: 0;
+      font-family: klausthin;
+    font-size: 1.3em;
+    line-height: .9em;
+    color: #FF9AE9;
+}
+
 
 
 .nextpagebutton {
     position: relative;
-    top: 400px;
+    top: 40px;
     left: 1400px;
     opacity: 0;
     transform: scale(0);
@@ -248,14 +177,14 @@ button{
     justify-content: center;
     align-items: center;
     font-family: klausthin;
-    font-size: 0.7em;
+    font-size: 1em;
     color: #FF9AE9;
     background-color: transparent;
     border: 1px solid #FF9AE9;
     border-radius: 100%;
     padding: 10px 20px;
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
 }
 
 .button-container{
@@ -267,6 +196,19 @@ button{
     margin-left: 1330px;
     position: absolute;
 
+}
+
+.special {
+    background-color: #FF9AE9 !important;
+    color: #2900F5 !important;
+    border: 1px solid #FF9AE9 !important;
+}
+
+.special:hover {
+    background-color: #FF9AE9 !important;
+    color: #2900F5 !important;
+    border: 1px solid #FF9AE9 !important;
+    transition: none !important;
 }
 
 .button-container2{
@@ -287,33 +229,15 @@ button:hover{
     transition: 0.3s ease-in-out;
 }
  
-
-.hamburger {
-    position: fixed;
-    top: 100px;
-    right: 50px;
-    width: 60px;
-    height: 60px;
-    background-color: transparent;
-    border: 1px solid #FF9AE9;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 2000;
+.menu{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    padding: 0;
-    transition: transform 0.3s ease;
+    gap: 20px;
+    margin-left: 60px;
+    margin-top: 170px;
+    position: absolute
 }
 
-.hamburger span {
-    width: 20px;
-    height: 2px;
-    background-color: #FF9AE9;
-    transition: all 0.3s ease;
-}
 
 .hamburger.open:hover {
     background-color: transparent !important;
@@ -424,6 +348,7 @@ a{
 
 .mobile{
     display: none;
+    
 }
 
 
@@ -457,6 +382,18 @@ a{
         line-height: 0.9em;
         padding: 15px;
     }
+
+    .mobile{
+        display: block;
+        font-family: Klaus ;
+        font-size: 3em;
+        font-weight: 100;
+        color: #FF9AE9;
+        margin-left: 20px;
+        margin-top: 20px;
+        letter-spacing: -0.08em;
+        line-height: 30pt;
+    }
     
     span {
         font-size: 0.9em;
@@ -474,15 +411,25 @@ a{
     }
     
     .hamburger {
-        top: 170px;
+        top: 160px;
+        width: 59px;
+        height: 59px;
+        left: 82%;
     }
     
     #nextBtn {
-        top: 250px;
+        top: 700px;
+        right: 230px;
+        width: 150px;
+        height: 150px;
+        font-size: 1em;
     }
     
     #deleteBtn {
-        top: 310px;
+        top: 700px;
+        width: 150px;
+        height: 150px;
+        font-size: 1em;
     }
     
     .hamburger span {
@@ -558,10 +505,10 @@ a{
     }
     
     .nextpagebutton {
-        top: 600px;
-        left: 45%;
-        height: 30px;
-        width: 30px;
+        top: 100px;
+        left: 82%;
+        height: 20px;
+        width: 20px;
         transform: translateX(-50%) scale(0);
     }
     
