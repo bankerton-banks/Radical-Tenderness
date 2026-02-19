@@ -280,6 +280,7 @@ body {
         align-items: center;
         width: 100%;
         padding: 20px 0 100px 0;
+        margin-top: 300px;
     }
 
       h1 {
@@ -314,8 +315,10 @@ body {
         height: auto;
         rotate: none;
         margin: 10px auto;
-        margin-top: -20px;
+        margin-top: -150px;
     }
+
+    
 
     .menu{
     display: flex;
@@ -360,7 +363,7 @@ body {
 }
 
     body {
-        overflow-y: hidden !important;
+    
         overflow-x: hidden !important;
     }
 }
