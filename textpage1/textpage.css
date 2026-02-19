@@ -355,17 +355,17 @@ a{
     color: #FF9AE9;
 }
     
-.textblock1 { top: 18vh; left: 20%; }
-.textblock2 { top: 22vh; left: 55%; }
-.textblock3 { top: 35vh; left: 70%; }
-.textblock4 { top: 40vh; left: 30%; }
-.textblock5 { top: 80vh; left: 35%; }
-.textblock6 { top: 55vh; left: 20%; }
-.textblock7 { top: 60vh; left: 35%; }
-.textblock8 { top: 45vh; left: 50%; }
-.textblock9 { top: 75vh; left: 20%; }
-.textblock10 { top: 80vh; left: 70%; }
-.textblock11 { top: 65vh; left: 70%; }
+.textblock1 { top: 18vh; left: 25%; }
+.textblock2 { top: 22vh; left: 60%; }
+.textblock3 { top: 35vh; left: 75%; }
+.textblock4 { top: 40vh; left: 35%; }
+.textblock5 { top: 80vh; left: 40%; }
+.textblock6 { top: 55vh; left: 25%; }
+.textblock7 { top: 60vh; left: 40%; }
+.textblock8 { top: 45vh; left: 55%; }
+.textblock9 { top: 75vh; left: 15%; }
+.textblock10 { top: 80vh; left: 75%; }
+.textblock11 { top: 65vh; left: 75%; }
 
 
     .nextpagebutton {

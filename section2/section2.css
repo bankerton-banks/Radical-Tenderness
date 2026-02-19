@@ -232,7 +232,7 @@ a{
     }
     
     .parentcontainer {
-        left: 133%;
+        left: 73%;
         transform: translateX(-50%);
         gap: 200px;
     }
@@ -262,7 +262,7 @@ a{
 .section3{
     width: 60px;
     height: 60px;
-    font-size: 1em;
+    font-size: 0.8em;
     margin-left: 0px ;
 }
     
